@@ -1,0 +1,328 @@
+<html>
+  <head>
+    <!-- Boostrap
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Fuente awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Dialogs cross browser -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.js"></script>
+
+    <!-- Materialize para formularios -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    
+
+    <script>
+      // Funciones generales
+      function MyGET(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      $( function() { 
+        //obtengo valores del get.
+        var vName = MyGET("nombre");
+        document.querySelector("#title-paso3").innerHTML = vName +',</br> pudimos mejorar la oferta! Todo Riego c/ franquicia de $7000 a...';
+        $('select').material_select();
+
+        //Funciones de carrousel
+        var tid = setTimeout(loop, 10000);
+        function loop() {
+          $('.carousel.carousel-slider').carousel('next');
+          tid = setTimeout(loop, 10000);
+        }
+
+       //declaracion de formulario poliza  
+        var dPoliza = document.querySelector('#dlg-poliza');
+        if (!dPoliza.showModal) {
+           dialogPolyfill.registerDialog(dPoliza);
+        };
+        $("#btn-poliza")
+          .click(function(){
+                 dPoliza.showModal();
+                 dPoliza.querySelector('.close').addEventListener('click', function() {
+                                      dPoliza.close();
+                                      });
+                                    });
+      });
+
+      $(document).ready(function(){
+        $('.carousel.carousel-slider').carousel({full_width: true});
+      });
+
+
+      // Chatra {literal} --
+        (function(d, w, c) {
+            w.ChatraID = '7Hm3MhNLsQevwZtqh';
+            var s = d.createElement('script');
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    // -- /Chatra {/literal} -->
+
+    </script>
+
+  </head>
+  <body>
+    <!-- Uses a transparent header that draws on top of the layout"s background -->
+    <div class="layout-opciones mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <div class="logo chico"></div>          
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <div class="logo"></div>
+        </span>
+        <nav class="mdl-navigation" style=" background-color: white; height: 80%; margin-top: 0;">
+            <a class="mdl-navigation__link" href="index.html">Home</a>
+            <a class="mdl-navigation__link" href="">Contacto</a>
+        </nav>
+      </div>
+
+      <main class="mdl-layout__content">
+        <div class="mdl-grid" id="main2-grid">
+          <!-- primera linea -->
+          <div class="mdl-grid mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet" style="margin-bottom:0;">
+          </div>
+          <div class="mdl-grid mdl-cell--11-col no-spaces mdl-cell-12-col-tablet mdl-cell-12-col-phone" style="margin-bottom:0; padding-bottom:0;" id="paso3-fila1">
+            <!-- tarjeta 1.1 -->
+            <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell-9-col-tablet mdl-cell-12-col-phone no-spaces" style="background-color: rgba(255, 255, 255, 0.75); margin-bottom:0;">
+              <div class="mdl-grid mdl-cell mdl-cell--12-col no-spaces" >
+                <div class="mdl-grid mdl-cell--12-col" style="margin-right:0px; padding-right:0px;">
+                  <div class="mdl-grid mdl-cell mdl-cell--12-col" style="margin:0px; padding:0px;">
+                    <div class="mdl-grid mdl-cell mdl-cell--9-col " style="margin-right:0; padding-right:0;" id="titulo-opc">
+                      <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px; margin-bottom:0;" id="title-paso3"><b>Juanita, pudimos mejorar la oferta!</b>Todo Riego c/ franquicia de $7000 a</h1>
+                    </div>
+                    <div class="mdl-grid mdl-cell mdl-cell--3-col" style="margin:0px; padding:0px; width:110px; align-self: center;">
+                      <a href="http://victory-design.ru/">
+                        <img class="foto-perfil" src="http://i3.istockimg.com/file_thumbview_approve/62949780/5/stock-photo-62949780-that-smile-has-melted-man-a-heart.jpg"/>
+                      </a>
+                    </div>
+                  </div>  
+                  <div class="mdl-grid mdl-cell--12-col">
+                    <div class="no-spaces">
+                      <h1 class="mdl-card__title-text no-spaces" style="font-size: 64px;"><b>$980.-</b></h1>
+                    </div>
+                    <div class="no-spaces" style="align-self: center;">
+                      <h1 class="mdl-card__title-text no-spaces" style="align-self:center; padding-left:10px; padding-right:10px;">(x Mes)</h1>
+                    </div>
+                    <div class="mdl-cell no-spaces" style="align-self: center; padding-left:10px;">
+                      <a class="mdl-cell--12-col mdl-button mdl-js-button mdl-button--raised mdl-button--accent next" href='./pago.html'>Contratar</a>
+                    </div>
+                    <div class="mdl-cell no-spaces" style="align-self: center; padding-left:10px;">
+                      <button class="mdl-button mdl-js-button mdl-button--raised" id="btn-poliza">ver poliza</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- tarjeta 1.2 -->
+            <div class="mdl-card mdl-cell mdl-cell--5-col mdl-cell-9-col-tablet mdl-cell-12-col-phone no-spaces" style="background-color: rgb(36, 166, 154); margin-bottom:0; border-left: 1px solid rgba(0, 0, 0, 0.32);">
+              <div>
+                  <div class="carousel carousel-slider" style="height: 353px;">
+                    <a class="carousel-item white-text" href="#one!">
+                      <img src="img/foto1.jpg">
+                    </a>
+                    <a class="carousel-item" href="#two!"><img src="img/foto2.jpg"></a>
+                    <a class="carousel-item" href="#three!"><img src="img/foto3.jpg"></a>
+                    <a class="carousel-item" href="#four!"><img src="img/foto4.jpg"></a>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <!--segunda linea -->
+          <div class="mdl-grid mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet" style="margin-top:0;">
+          </div>
+          <div class="mdl-grid mdl-cell--11-col no-spaces mdl-cell-12-col-tablet mdl-cell-12-col-phone" style="margin-top:0; padding-top:0;">
+            <!-- tarjeta 2.1 -->
+            <div class="mdl-card mdl-cell mdl-cell--6-col no-spaces mdl-cell-9-col-tablet mdl-cell-12-col-phone" style="background-color: rgba(38, 166, 154, 0.78); color:white; padding: 20px; margin-top:0;">
+                  <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px;margin-top: 0;padding-bottom: 10px;border-bottom: 1px solid rgba(255, 255, 255, 0.39); font-size:20px;" id="title-paso3">Otras opciones pueden ser...</h1>
+                  <ul class="demo-list-two mdl-list" style="margin: 0;padding: 0;">
+                    <li class="mdl-list__item lista" style="margin: 0;padding: 0; color:white;">
+                      <span class="mdl-cell--9-col">Solo Tercero a $750</span>
+                      <button class="mdl-cell--3-col mdl-button mdl-js-button" style="margin-bottom: 2px; color:white; background-color:rgba(0, 0, 0, 0.21);">
+                         Ver
+                        </button>
+                    </li>
+                    <li class="mdl-list__item lista" style="margin: 0;padding: 0; color:white;">
+                      <span class="mdl-cell--9-col">Tercero Robo e incendio total y parcial a $950</span>
+                      <button class="mdl-cell--3-col mdl-button mdl-js-button" style="margin-bottom: 2px; color:white; background-color:rgba(0, 0, 0, 0.21);">
+                        Ver
+                      </button>
+                    </li>
+                    <li class="mdl-list__item lista" style="margin: 0;padding: 0; color:white;">
+                      <span class="mdl-cell--9-col">Todo Riesgo completo a $2200</span>
+                      <button class="mdl-cell--3-col mdl-button mdl-js-button" style=" margin-bottom: 2px; background-color:rgba(0, 0, 0, 0.21);  color:white;">
+                        Ver
+                      </button>
+                    </li>
+                  </ul>
+            </div>
+            <!-- tarjeta 2.2 -->
+            <div class="mdl-card mdl-cell mdl-cell--5-col no-spaces mdl-cell-9-col-tablet mdl-cell-12-col-phone" style="background-color: rgba(38, 166, 154, 0.78); color:white; padding: 20px; margin-top:0;">
+                  <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px;margin-top: 0;padding-bottom: 10px;border-bottom: 1px solid rgba(255, 255, 255, 0.39); font-size:20px;" id="title-paso3">Beneficios y Garantías</h1>
+                  <ul class="demo-list-two mdl-list" style="margin: 0;padding: 0;">
+                    <li class="mdl-list__item mdl-list__item--two-line lista" style="margin: 0;padding: 0;">
+                      <div class="mdl-grid mdl-cell--12-col lists-page3">
+                        <span>0% deducible en robo total</span>
+                      </div>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--two-line lista" style="margin: 0;padding: 0;">
+                      <div class="mdl-grid mdl-cell--12-col lists-page3">
+                        <span>Servicio de traslado en todo el pais</span>
+                      </div>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--two-line lista" style="margin: 0;padding: 0;">
+                      <div class="mdl-grid mdl-cell--12-col lists-page3">
+                        <span>Asistencia legal y medica</span>
+                      </div>
+                    </li>
+                  </ul>            
+            </div>
+          </div>
+      </div>
+      </main>
+
+      <!-- DIALOGOS -->
+      <dialog class="mdl-dialog mdl-cell--9-col mdl-cell-12-col-tablet mdl-cell-12-col-phone" id="dlg-poliza">
+          <div class="mdl-dialog__content ">
+              <h5> Tu cobertura es la siguiente:</h5>
+              <ul class="demo-list-two mdl-list">
+                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
+                  <span class="mdl-list__item-primary-content">
+                    <span>Daños Materiales</span>
+                    <span class="mdl-list__item-text-body">
+                      Valor comercial hasta el 5% deducible.
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
+                  </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
+                  <span class="mdl-list__item-primary-content">
+                    <span>Robo</span>
+                    <span class="mdl-list__item-text-body">
+                      Total y parcial cobertura completa.
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
+                  </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
+                  <span class="mdl-list__item-primary-content">
+                    <span>Gastos Medicos</span>
+                    <span class="mdl-list__item-text-body">
+                      Para todos los ocupantes del vehiculo hasta $100.000.-
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
+                  </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
+                  <span class="mdl-list__item-primary-content">
+                    <span>Accidentes</span>
+                    <span class="mdl-list__item-text-body">
+                      Para el conductor y ocupantes de otros vehiculos que hayan participado del siniestro, hasta $100.000.-
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
+                  </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
+                  <span class="mdl-list__item-primary-content">
+                    <span>Responsabilidad Civil</span>
+                    <span class="mdl-list__item-text-body">
+                      Limite único combinado, hasta $1.500.000.-
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
+                  </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
+                  <span class="mdl-list__item-primary-content">
+                    <span>Extensión de Responsabilidad Civil</span>
+                    <span class="mdl-list__item-text-body">
+                      Para automobil de transporte de pasajeros
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
+                  </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
+                  <span class="mdl-list__item-primary-content">
+                    <span>Resp. Civil por muerte</span>
+                    <span class="mdl-list__item-text-body">
+                      Adicional para responsabilidad civil por muerte, hasta $2.000.000.-
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
+                  </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
+                  <span class="mdl-list__item-primary-content">
+                    <span>Asistencia Juridica</span>
+                    <span class="mdl-list__item-text-body">
+                      Equipo de abogados y contadores de la empresa.
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
+                  </span>
+                </li>              
+                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
+                  <span class="mdl-list__item-primary-content">
+                    <span>Otros</span>
+                    <span class="mdl-list__item-text-body">
+                      Asistencia en viaje, Asistencia medica.
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
+                  </span>
+                </li>              
+              </ul>
+          </div>
+          <div class="mdl-dialog__actions mdl-dialog__actions">
+              <button type="button" class="mdl-button close">cerrar</button>
+          </div>
+      </dialog>
+
+  </body>
+</html>
+

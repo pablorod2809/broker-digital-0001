@@ -1,0 +1,196 @@
+<html>
+  <head>
+    <!-- Boostrap
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Fuente awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Dialogs cross browser -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.js"></script>
+
+    <!-- Materialize para formularios -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+    <script>
+     $( function() { 
+      //declaro dialogo de te llamamos con polyfill  
+      var dialog1 = document.querySelector("#dialog1");
+      if (! dialog1.showModal) {
+         dialogPolyfill.registerDialog(dialog1);
+      };
+
+     $(".next")
+        .click(function(){
+            dialog1.showModal();
+            dialog1.querySelector('.close').addEventListener('click', function() {
+                                dialog1.close();
+                                window.location="index.html";
+                                });
+        });
+
+      $('select').material_select();
+
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+      });
+
+    });
+    </script>
+    <!-- Chatra {literal} -->
+    <script>
+        (function(d, w, c) {
+            w.ChatraID = '7Hm3MhNLsQevwZtqh';
+            var s = d.createElement('script');
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
+  </head>
+  <body>
+    <!-- Uses a transparent header that draws on top of the layout"s background -->
+    <div class="layout-pago mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <div class="logo chico"></div>          
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <div class="logo"></div>
+        </span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="index.html">Home</a>
+            <a class="mdl-navigation__link" href="">Contacto</a>
+        </nav>
+      </div>
+
+      <main class="mdl-layout__content">
+        <div class="mdl-grid main">
+          <div class="mdl-grid mdl-cell--2-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+          </div>
+          <div class="mdl-grid mdl-cell--6-col main">
+            <div class="mdl-card something-else mdl-cell mdl-cell--12-col main" style="background-color:rgba(255, 255, 255, 0.75);">
+              <div class="mdl-card__title" style="height:110px;background-color: #16aca4;color: white;">
+                <div class="mdl-grid mdl-cell mdl-cell--9-col " style="margin-right:0; padding-right:0;" id="titulo-opc">
+                  <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px; margin-bottom:0;"><b>Registrá tu pago de $1120</b></br></h1>
+                </div>
+              </div>
+              <div class="mdl-grid mdl-cell--12-col">
+                <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col">Cargá los datos con tu medio de pago favorito</h1>
+              </div>
+              <div class="mdl-grid mdl-cell--12-col row">
+                <div class="input-field col s6" style="padding-left:10px">
+                  <select>
+                    <option value="1">Visa</option>
+                    <option value="2">Master Card</option>
+                    <option value="3">Nativa</option>
+                    <option value="4">Cabal</option>
+                    <option value="5">American Express</option>
+                  </select>
+                  <label>Tarjeta de credito</label>
+                </div>
+                <div class="input-field col s6" style="padding-left:10px">
+                  <input id="myname" type="text" class="validate">
+                  <label for="first_name">Nombre del titular</label>
+                </div>
+              </div>
+              <div class="mdl-grid mdl-cell--12-col row">
+                <div class="input-field col s6" style="padding-left:10px">
+                  <input id="myname" type="text" class="validate" pattern="-?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11}?" maxlength="16">
+                  <label for="first_name">Nro de Tarjeta (sin guiones)</label>
+                </div>                
+                <div class="input-field col s3" style="padding-left:10px">
+                  <input id="myname" type="number" maxlength="4" class="validate">
+                  <label for="first_name">PIN</label>
+                </div>  
+                <div class="input-field col s3" style="padding-left:10px">
+                  <input id="myname" type="date" class="datepicker">
+                  <label for="first_name">Vencimiento</label>
+                </div>    
+              </div>
+              <div>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent btn-continuar next">Confirmar Pago.</button>
+              </div>
+                <details style="margin-top:20px; margin-bottom:20px; font-size:12px; color:#CECECE;">
+                  <summary>(*) ver el detalle de la póliza.</summary>
+                  <ul class="demo-list-two mdl-list">
+                    <li class="mdl-list__item mdl-list__item--two-line lista">
+                      <span class="mdl-list__item-primary-content">
+                        <span>Vigencia desde</span>
+                        <span class="mdl-list__item-sub-title">30/12/2016</span>
+                      </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--two-line lista">
+                      <span class="mdl-list__item-primary-content" style="height:auto;">
+                        <span style="height:auto;">Caracteristicas</span>
+                        <span class="mdl-list__item-sub-title" style="height:auto;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</span>
+                      </span>
+                    </li>
+                  </ul>
+                </details>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-grid mdl-cell--4-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+          </div>
+        </div>
+      
+      </main>
+
+      <footer id="footer" class="mdl-grid mdl-cell--12-col">
+        <div class="mdl-cell--2-col">
+        </div>
+        <div class="mdl-cell--9-col">
+           <span class="mdl-chip mdl-chip--contact contact" >
+              <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" src="http://clinique-jean-le-bon.capio.fr/wp-content/uploads/sites/26/2014/06/telephone.png"></img>
+              <span class="mdl-chip__text footer-contacts">0800-000-00000</span>
+          </span>
+          <span class="mdl-chip mdl-chip--contact contact" id="get-productor">
+            <img class="mdl-chip__contact" src="http://www.biochampagne.it/themes/cena-avvenimento-importante.png"></img>
+              <span class="mdl-chip__text mdl-footer-contacts mdl-cell--hide-tablet mdl-cell--hide-phone">Mapa de Productores</span>
+          </span>
+        </div>
+        <div class="mdl-cell--2-col">
+        </div>
+      </footer>
+
+      <!-- DIALOGOS -->
+      <dialog class="mdl-dialog" id="dialog1">
+          <div class="mdl-dialog__content">
+              <p> Tu pago ha sido procesado! recibiras tu poliza y recibo de pago por email.</p>
+          </div>
+          <div class="mdl-dialog__actions mdl-dialog__actions">
+              <button type="button" class="mdl-button close">ok</button>
+          </div>
+      </dialog>
+
+  </body>
+</html>
+
