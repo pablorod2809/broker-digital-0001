@@ -33,12 +33,12 @@
     <link href="css/nouislider.min.css" rel="stylesheet">
     <script src="js/nouislider.min.js"></script>
 
-    <script src="js/dialog.js"></script> 
 
     <script>
       //variable para identificar salida de la web.
 
       $( function() {
+
         var availableTags = [
           "Chevrolet Agile 1.4 LS / LS Spirit 5Ptas. " ,
           "Chevrolet Agile 1.4 LT / LT Spirit 5Ptas. " ,
@@ -129,31 +129,6 @@
            dialogPolyfill.registerDialog(dValidate);
         };
 
-        /* DIALOGOS COMUNES a TODAS LAS PANTALLAS
-        //declaro dialogo de te llamamos con polyfill  
-        var dCallYou = document.querySelector('#call-you');
-        if (! dCallYou.showModal) {
-           dialogPolyfill.registerDialog(dCallYou);
-        };
-
-        //declaro dialogo de productores con polyfill  
-        var dProductor = document.querySelector('#productor');
-        if (! dProductor.showModal) {
-           dialogPolyfill.registerDialog(dProductor);
-        };
-
-       var slider = document.getElementById('test5');
-        noUiSlider.create(slider, {
-         start: [8, 13],
-         connect: true,
-         tooltips: true,
-         step: 1,
-         range: {
-           'min': 8,
-           'max': 19
-         }
-        });*/
-
         function customFilter(array, terms) {
             arrayOfTerms = terms.split(" ");
               return $.grep(array, function (value) {
@@ -190,25 +165,9 @@
               window.location.href = "./opciones.html?car="+auto+"&year="+anio+"&place="+lugar;
             }
          });
-
-       /* $("#send-phone")
-          .click(function(){
-              dCallYou.showModal();
-              dCallYou.querySelector('.close').addEventListener('click', function() {
-                                  dCallYou.close();
-                                  });
-          });
-
-        $("#get-productor")
-          .click(function(){
-              dProductor.showModal();
-              dProductor.querySelector('.close').addEventListener('click', function() {
-                                  dProductor.close();
-                                  });
-          });*/
-
-     
+      
       });
+
     </script>
 
     <!-- Scripts de Geolocalizacion -->
@@ -233,6 +192,7 @@
     </script>
     <!-- /Chatra {/literal} -->
 
+    <script src="js/dialog.js"></script> 
 
   </head>
   <body>
@@ -322,15 +282,14 @@
             <h5 class="titulo">Te ofrecemos una amplia gama de coberturas, con el respaldo y servicio que siempre nos caracterízan.</h2>
           </div>
         </div>
-      </main>
-      <footer>
-        <div id="send-phone" style="height: 60px; width: 60px; position: absolute; right: 85; bottom: 20;">
-            <img class="mdl-cell--hide-tablet mdl-cell--hide-phone" src="img/phone-icon.png" style="height: 60px; width: 60px;"></img>
+        <div  id="send-phone" style="height: 60px; width: 60px; position: fixed; right: 90; bottom: 20;">
+            <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" src="img/phone-icon.png" style="height: 60px; width: 60px;"></img>
         </div>    
-        <span id="get-productor" style="height: 60px; width: 60px; position: absolute; right: 160; bottom: 20;">
+        <span id="get-productor" style="height: 60px; width: 60px; position: fixed; right: 160; bottom: 20;">
             <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;" src="img/map.png"></img>
         </span>
-      </footer>
+      </main>
+
       <!-- DIALOGOS -->
       <dialog class="mdl-dialog" id="validate" >
         <h4 class="mdl-dialog__title" >Datos pendientes</h4>

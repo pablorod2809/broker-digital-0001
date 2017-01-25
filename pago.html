@@ -36,8 +36,6 @@
     <!-- comparativa precios -->
     <link rel="stylesheet" href="css/style_price.css">
 
-    <script src="js/dialog.js"></script> 
-
     <script>
      $( function() { 
       //declaro dialogo de te llamamos con polyfill  
@@ -51,7 +49,7 @@
             dialog1.showModal();
             dialog1.querySelector('.close').addEventListener('click', function() {
                                 dialog1.close();
-                                window.location="index.html";
+                                window.location="index.php";
                                 });
         });
 
@@ -93,33 +91,9 @@
     </script>
     <!-- /Chatra {/literal} -->
 
-
+    <script src="js/dialog.js"></script> 
   </head>
   <body>
-    <script>
-    $( function() { 
-       var slider = document.getElementById('test5');
-        noUiSlider.create(slider, {
-         start: [8, 13],
-         connect: true,
-         tooltips: true,
-         step: 1,
-         range: {
-           'min': 8,
-           'max': 19
-         }
-        });
-
-        var skipValues = [
-          document.getElementById('minimo'),
-          document.getElementById('maximo')
-        ];
-
-        slider.noUiSlider.on('update', function( values, handle ) {
-          skipValues[handle].innerHTML = values[handle];
-        });
-      });
-    </script>
     <!-- Uses a transparent header that draws on top of the layout"s background -->
     <div class="layout-pago mdl-layout mdl-js-layout">
       <header class="mdl-layout__header mdl-layout__header--transparent">
@@ -193,14 +167,14 @@
           <div class="mdl-grid mdl-cell--4-col mdl-cell--hide-phone mdl-cell--hide-tablet">
           </div>
         </div>
-      
+        <div  id="send-phone" style="height: 60px; width: 60px; position: fixed; right: 90; bottom: 20;">
+            <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" src="img/phone-icon.png" style="height: 60px; width: 60px;"></img>
+        </div>    
+        <span id="get-productor" style="height: 60px; width: 60px; position: fixed; right: 160; bottom: 20;">
+            <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;" src="img/map.png"></img>
+        </span>    
       </main>
-      <span id="send-phone" >
-          <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px; position: absolute; right: 85; bottom: 20;"  src="img/phone-icon.png"></img>
-      </span>    
-      <span id="get-productor">
-          <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px; position: absolute; right: 160; bottom: 20;" src="img/map.png"></img>
-      </span>
+
 
 
       <!-- DIALOGOS -->
