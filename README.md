@@ -7,6 +7,7 @@ V5. Ajustes funcionales y estetica.
   - comparacion de planes
   - vista de poliza
   - cambio pagina toma de datos.
+  
 V4. Primer version subida a bluemix.
   - consulta de veiculo 
   - carga de datos adicionales y conductor.
