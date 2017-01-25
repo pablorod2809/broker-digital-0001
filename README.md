@@ -1,6 +1,19 @@
-# PHP Starter Overview
+# Broker Digital
 
-The PHP Starter demonstrates a simple, reusable PHP web application.
+V5. Ajustes funcionales y estetica.
+  - llamado telefonico con fecha y hora
+  - cambio opciones de menu
+  - cambio de colores.
+  - comparacion de planes
+  - vista de poliza
+  - cambio pagina toma de datos.
+V4. Primer version subida a bluemix.
+  - consulta de veiculo 
+  - carga de datos adicionales y conductor.
+  - oferta de seguro.
+  - publicidad
+  - mapa de productores
+  - llamado
 
 ## Run the app locally
 
