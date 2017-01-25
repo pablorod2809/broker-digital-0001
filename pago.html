@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="broker-digital V5">
+
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css">
@@ -14,7 +16,8 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <!-- Fuente awesome-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -25,6 +28,15 @@
     <!-- Materialize para formularios -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+    <!-- nouslider -->
+    <link href="css/nouislider.min.css" rel="stylesheet">
+    <script src="js/nouislider.min.js"></script>
+
+    <!-- comparativa precios -->
+    <link rel="stylesheet" href="css/style_price.css">
+
+    <script src="js/dialog.js"></script> 
 
     <script>
      $( function() { 
@@ -50,6 +62,19 @@
         selectYears: 15 // Creates a dropdown of 15 years to control year
       });
 
+      //declaracion de formulario poliza  
+      var dPoliza = document.querySelector('#dlg-poliza');
+      if (!dPoliza.showModal) {
+         dialogPolyfill.registerDialog(dPoliza);
+      };
+      $("#btn-poliza")
+        .click(function(){
+               dPoliza.showModal();
+               dPoliza.querySelector('.close').addEventListener('click', function() {
+                                    dPoliza.close();
+                                    });
+                                  });
+
     });
     </script>
     <!-- Chatra {literal} -->
@@ -67,8 +92,34 @@
         })(document, window, 'Chatra');
     </script>
     <!-- /Chatra {/literal} -->
+
+
   </head>
   <body>
+    <script>
+    $( function() { 
+       var slider = document.getElementById('test5');
+        noUiSlider.create(slider, {
+         start: [8, 13],
+         connect: true,
+         tooltips: true,
+         step: 1,
+         range: {
+           'min': 8,
+           'max': 19
+         }
+        });
+
+        var skipValues = [
+          document.getElementById('minimo'),
+          document.getElementById('maximo')
+        ];
+
+        slider.noUiSlider.on('update', function( values, handle ) {
+          skipValues[handle].innerHTML = values[handle];
+        });
+      });
+    </script>
     <!-- Uses a transparent header that draws on top of the layout"s background -->
     <div class="layout-pago mdl-layout mdl-js-layout">
       <header class="mdl-layout__header mdl-layout__header--transparent">
@@ -96,10 +147,8 @@
           </div>
           <div class="mdl-grid mdl-cell--6-col main">
             <div class="mdl-card something-else mdl-cell mdl-cell--12-col main" style="background-color:rgba(255, 255, 255, 0.75);">
-              <div class="mdl-card__title" style="height:110px;background-color: #16aca4;color: white;">
-                <div class="mdl-grid mdl-cell mdl-cell--9-col " style="margin-right:0; padding-right:0;" id="titulo-opc">
-                  <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px; margin-bottom:0;"><b>Registrá tu pago de $1120</b></br></h1>
-                </div>
+              <div class="mdl-card__title">
+                <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px; margin-bottom:0;"><b>Registrá tu pago de $980</b></br></h1>
               </div>
               <div class="mdl-grid mdl-cell--12-col">
                 <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col">Cargá los datos con tu medio de pago favorito</h1>
@@ -137,24 +186,7 @@
               <div>
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent btn-continuar next">Confirmar Pago.</button>
               </div>
-                <details style="margin-top:20px; margin-bottom:20px; font-size:12px; color:#CECECE;">
-                  <summary>(*) ver el detalle de la póliza.</summary>
-                  <ul class="demo-list-two mdl-list">
-                    <li class="mdl-list__item mdl-list__item--two-line lista">
-                      <span class="mdl-list__item-primary-content">
-                        <span>Vigencia desde</span>
-                        <span class="mdl-list__item-sub-title">30/12/2016</span>
-                      </span>
-                    </li>
-                    <li class="mdl-list__item mdl-list__item--two-line lista">
-                      <span class="mdl-list__item-primary-content" style="height:auto;">
-                        <span style="height:auto;">Caracteristicas</span>
-                        <span class="mdl-list__item-sub-title" style="height:auto;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</span>
-                      </span>
-                    </li>
-                  </ul>
-                </details>
+                <button class="mdl-list__item"  style="border:0px;" id="btn-poliza"> ver el detalle de la póliza</button> 
               </div>
             </div>
           </div>
@@ -163,23 +195,13 @@
         </div>
       
       </main>
+      <span id="send-phone" >
+          <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px; position: absolute; right: 85; bottom: 20;"  src="img/phone-icon.png"></img>
+      </span>    
+      <span id="get-productor">
+          <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px; position: absolute; right: 160; bottom: 20;" src="img/map.png"></img>
+      </span>
 
-      <footer id="footer" class="mdl-grid mdl-cell--12-col">
-        <div class="mdl-cell--2-col">
-        </div>
-        <div class="mdl-cell--9-col">
-           <span class="mdl-chip mdl-chip--contact contact" >
-              <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" src="http://clinique-jean-le-bon.capio.fr/wp-content/uploads/sites/26/2014/06/telephone.png"></img>
-              <span class="mdl-chip__text footer-contacts">0800-000-00000</span>
-          </span>
-          <span class="mdl-chip mdl-chip--contact contact" id="get-productor">
-            <img class="mdl-chip__contact" src="http://www.biochampagne.it/themes/cena-avvenimento-importante.png"></img>
-              <span class="mdl-chip__text mdl-footer-contacts mdl-cell--hide-tablet mdl-cell--hide-phone">Mapa de Productores</span>
-          </span>
-        </div>
-        <div class="mdl-cell--2-col">
-        </div>
-      </footer>
 
       <!-- DIALOGOS -->
       <dialog class="mdl-dialog" id="dialog1">
@@ -188,6 +210,113 @@
           </div>
           <div class="mdl-dialog__actions mdl-dialog__actions">
               <button type="button" class="mdl-button close">ok</button>
+          </div>
+      </dialog>
+
+      <dialog class="mdl-dialog mdl-cell--9-col mdl-cell-12-col-tablet mdl-cell-12-col-phone" id="dlg-poliza"  style="padding-bottom: 0; padding-top: 0;  background-color:rgba(27, 188, 157, 0.77); width:100%">
+          <div class="pricing-container">
+
+          <ul class="pricing-list bounce-invert">
+            <li class="exclusive" style="width: 100%;">
+              <ul class="pricing-wrapper">
+                <li data-type="monthly" class="is-visible">
+                  <header class="pricing-header" style="padding-bottom:0;">
+                    <h2>Condiciones Generales: Todo Riesgo c.Fcia $7000.-</h2>
+                  </header>
+                  <div class="pricing-body">
+                    <p style="text-align: left; font-weight: 100; margin-bottom: 20px; padding:0 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <div class="mdl-cell--6-col" style="display:inline-block;">
+                      <ul class="pricing-features">
+                        <li>Valor asegurado <em>$164.000</em>.</li>
+                        <li>Responsabilidad civil <em>$1.000.000</em></li>
+                        <li>Robo Total y Parcial <em>Si</em></li>
+                        <li>Adicional x Muerte <em>$2.000.000</em></li>
+                        <li>Extencion resp civil <em>$500.000</em></li>
+                        <li>Incendio Total y Parcial <em>Si</em></li>
+                        <li>Daño Total <em>Si</em></li>
+                        <li>Daño Parcial <em>Fcia. $7000</em></li>
+                      </ul>
+                    </div>    
+                    <div class="mdl-cell--6-col" style="display:inline-block;">
+                      <ul class="pricing-features mdl-cell--6-col">
+                        <li>Clausura dest. del 80% <em>Si</em></li>
+                        <li>Rotura Luneta o Parabrisas <em>Sin Limite</em></li>
+                        <li>Rotura Vidrios Laterales <em>Sin Limite</em></li>
+                        <li>Rotura Cerraduras <em>Sin Limite</em></li>
+                        <li>Daños parciales granizo <em>Sin Limite</em></li>
+                        <li>Asistencia en viaje <em>Si</em></li>
+                        <li>Remolque <em>2 x año</em></li>
+                        <li>Grabado de cristales <em>Si</em></li>
+                      </ul>
+                    </div>
+                    <p style="text-align: left; font-weight: 100; margin-bottom: 00px; padding: 20px 25px 0 25px;"><em style="font-weight: 500;">Lorem ipsum dolor</em> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p style="text-align: left; font-weight: 100; margin-bottom: 00px; padding: 0px 25px 0 25px;"><em style="font-weight: 500;">reprehenderit in voluptate velit</em> esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p style="text-align: left; font-weight: 100; margin-bottom: 20px; padding: 0px 25px 20 25px;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  </div>
+                  <footer class="pricing-footer" >
+                    <a class="select close" style="position: fixed; top: 10px; width: auto; right: 1em; padding: 10; background-color: rgba(0, 0, 0, 0.28);}" href="#">x</a>
+                  </footer>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog class="mdl-dialog" id="call-you" style="width:350px;">
+          <div class="mdl-dialog__content">
+              <h4> Mi teléfono (011)15-55555</h4>
+              <p style="padding-top:20px;"> Si queres te llamo</p>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="tele">
+                <input class="mdl-textfield__input" type="phone" onClick="this.select();" id="telef">
+                <label class="mdl-textfield__label" for="year">Número de Teléfono</label>
+                <span class="mdl-textfield__error"></span>
+              </div>
+              <p> Que día puedo llamarte?</p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="lun" checked="checked" />
+                <label for="lun">Lun</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="mar" checked="checked" />
+                <label for="mar">Mar</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="mie" checked="checked" />
+                <label for="mie">Mie</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="jue" checked="checked" />
+                <label for="jue">Jue</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="vie" checked="checked" />
+                <label for="vie">Vie</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="sab"  />
+                <label for="sab">Sab</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="dom"  />
+                <label for="dom">Dom</label>
+              </p>
+              <p style="padding-top: 20px;"> En que horario?</p>
+              <div id="test5" class="noUi-target noUi-ltr noUi-horizontal" style="margin-top:25px">
+              </div>
+          </div>
+          <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+              <button type="button" class="mdl-button close" >Ok</button>
+          </div>
+      </dialog>
+
+      <dialog class="mdl-dialog" id="productor" style="width:80%; height:80%;">
+          <div class="mdl-dialog__content">
+              <iframe src="https://www.google.com/maps/d/embed?mid=1CJg5vqQU00o8ygsyZDCwk3gp3GY" width="640" height="80%"></iframe>
+          </div>
+          <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+              <button type="button" class="mdl-button close" >Ok</button>
           </div>
       </dialog>
 

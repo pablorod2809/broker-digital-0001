@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="broker-digital V5">
 
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -27,15 +28,15 @@
     <!-- My Style -->
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- Scripts de Geolocalizacion -->
-    <script src="js/geolocate.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwiHYaB5Z8qH6NJNvmblo-abeiLHrV6Lw&libraries=places&callback=initAutocomplete"
-        async defer>
-    </script>
+
+    <!-- nouslider -->
+    <link href="css/nouislider.min.css" rel="stylesheet">
+    <script src="js/nouislider.min.js"></script>
+
+    <script src="js/dialog.js"></script> 
 
     <script>
       //variable para identificar salida de la web.
-      var vAdios = false;
 
       $( function() {
         var availableTags = [
@@ -122,6 +123,13 @@
           "Chevrolet Corsa Classic  Wagon 1.4/1.6 N GLS"
         ];
 
+        //declaro dialogo de validaciones busqueda con polyfill  
+        var dValidate = document.querySelector('#validate');
+        if (! dValidate.showModal) {
+           dialogPolyfill.registerDialog(dValidate);
+        };
+
+        /* DIALOGOS COMUNES a TODAS LAS PANTALLAS
         //declaro dialogo de te llamamos con polyfill  
         var dCallYou = document.querySelector('#call-you');
         if (! dCallYou.showModal) {
@@ -134,11 +142,17 @@
            dialogPolyfill.registerDialog(dProductor);
         };
 
-        //declaro dialogo de validaciones busqueda con polyfill  
-        var dValidate = document.querySelector('#validate');
-        if (! dValidate.showModal) {
-           dialogPolyfill.registerDialog(dValidate);
-        };
+       var slider = document.getElementById('test5');
+        noUiSlider.create(slider, {
+         start: [8, 13],
+         connect: true,
+         tooltips: true,
+         step: 1,
+         range: {
+           'min': 8,
+           'max': 19
+         }
+        });*/
 
         function customFilter(array, terms) {
             arrayOfTerms = terms.split(" ");
@@ -177,7 +191,7 @@
             }
          });
 
-        $("#send-phone")
+       /* $("#send-phone")
           .click(function(){
               dCallYou.showModal();
               dCallYou.querySelector('.close').addEventListener('click', function() {
@@ -191,66 +205,17 @@
               dProductor.querySelector('.close').addEventListener('click', function() {
                                   dProductor.close();
                                   });
-          });
+          });*/
 
      
       });
-
-      function adios()
-      {
-        if (!vAdios) {
-          /*return "Ha intentado salir de esta pagina. Si ha realizado algun cambio en los campos sin hacer clic en el boton Guardar, los cambios se perderan. Seguro que desea salir de esta pagina? ";*/
-          alert('adios, regresa pronto');
-        }
-      }
-
     </script>
 
-
-
-<!--<script>
-      var placeSearch, autocomplete;
-      var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
-      };
-      var options = {
-        types: ['(cities)'],
-        componentRestrictions: {country: 'ar'}
-      };
-
-      function initAutocomplete() {
-        autocomplete = new google.maps.places.Autocomplete(
-            (document.getElementById('autocomplete')),options);
-        autocomplete.addListener('place_changed', fillInAddress);
-      }
-
-      function fillInAddress() {
-        var place = autocomplete.getPlace();
-      }
-
-      function geolocate() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
-            });
-            autocomplete.setBounds(circle.getBounds());
-          });
-        }
-
-      }
-    </script>-->
-
+    <!-- Scripts de Geolocalizacion -->
+    <script src="js/geolocate.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwiHYaB5Z8qH6NJNvmblo-abeiLHrV6Lw&libraries=places&callback=initAutocomplete"
+        async defer>
+    </script>
 
     <!-- Chatra {literal} -->
     <script>
@@ -267,8 +232,10 @@
         })(document, window, 'Chatra');
     </script>
     <!-- /Chatra {/literal} -->
+
+
   </head>
-  <body unload="javascript:adios()">
+  <body>
     <!-- Uses a transparent header that draws on top of the layout"s background -->
     <div class="layout-transparent mdl-layout mdl-js-layout">
       <header class="mdl-layout__header mdl-layout__header--transparent">
@@ -298,23 +265,17 @@
           <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone">
           </div>
 
-          <div class="card-online mdl-card something-else mdl-cell mdl-cell--6-col mdl-cell-10-col-tablet mdl-cell-12-col-phone main">
-            <div class="mdl-card__title titulo-tarjeta" style="background-color:rgba(22, 172, 164, 0.19); border-bottom:2px solid rgba(22, 172, 164, 0.52); color:black;" >
+          <div class="card-online mdl-card something-else mdl-cell mdl-cell--6-col mdl-cell-10-col-tablet mdl-cell-12-col-phone main" style="background-color: rgba(255, 255, 255, 0.75)">
+            <div class="mdl-card__title titulo-tarjeta" style="border-bottom:2px solid rgba(22, 172, 164, 1); color:black;" >
               <div class="mdl-grid mdl-cell mdl-cell--3-col" style="margin-left: -5px;  margin-bottom: 15px;">
-                <a href="http://victory-design.ru/">
-                  <img src="http://i3.istockimg.com/file_thumbview_approve/62949780/5/stock-photo-62949780-that-smile-has-melted-man-a-heart.jpg" style="width: 110px; border-radius: 50%; height: 110px; border: 2px solid rgba(22, 172, 164, 0.42); box-shadow: 1px 3px 3px rgba(255, 255, 255, 0.3); padding:5px"/>
+                <a>
+                  <img src="http://i3.istockimg.com/file_thumbview_approve/62949780/5/stock-photo-62949780-that-smile-has-melted-man-a-heart.jpg" style="width: 110px; border-radius: 50%; height: 110px; border: 2px solid rgb(22, 172, 164); padding:5px"/>
                 </a>
               </div>
 
               <div class="mdl-grid mdl-cell mdl-cell--9-col" style="margin-right: 0;padding-right: 0;margin-left: 0;">
-                <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px; font-weight: 400; margin-bottom:0; margin-top:0;">Pablo R.</h1>
-                <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 16px; margin-top:0; ">Tu Productor Asesor (mat. 123123)</h1>
-                <span class="mdl-chip mdl-chip--contact">
-                    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">
-                      <i class="material-icons" style=" margin-top: 6px; font-size: 18px;">phone</i>
-                    </span>
-                    <span class="mdl-chip__text mdl-layout--large-screen-only">011 15-555555</span>
-                </span>
+                <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px; font-weight: 400; margin-bottom:0; margin-top:0; color:#777777;">Pablo R.</h1>
+                <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 16px; margin-top:0; color:#777777; font-weight: 400;">Tu Productor Asesor (mat. 123123)</h1>
                 <button class="mdl-button mdl-js-button mdl-button--icon" style="margin-left: 10px; background-color: #009688; font-size: 15px; color:white;">
                   <i class="fa fa-facebook"></i>
                 </button>
@@ -325,7 +286,7 @@
             </div>
 
             <div class="mdl-grid mdl-cell--12-col" style="padding-top: 49px;">
-            <div style="width: auto;text-align: right;margin-top: -43px;font-size: 14px;border: 0px solid #e2e2e2; border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;border-top-right-radius: 15px;background-color: #ffffff;vertical-align: middle;padding: 0.7em;font-weight: bold;color: #16aca4; /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);*/">
+            <div style="width: auto;text-align: right;margin-top: -43px;font-size: 14px;border: 0px solid #e2e2e2; border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;border-top-right-radius: 15px; vertical-align: middle;padding: 0.7em;font-weight: bold;color: #16aca4;">
                 <label>Obten&#233; ahora mismo una cotizacion on-line!</label>
             </div>
 
@@ -361,30 +322,18 @@
             <h5 class="titulo">Te ofrecemos una amplia gama de coberturas, con el respaldo y servicio que siempre nos caracterízan.</h2>
           </div>
         </div>
-
       </main>
-
-      <footer id="footer" class="mdl-grid mdl-cell--12-col" style="padding-bottom: 0; padding-top: 0;">
-        <div class="mdl-cell--1-col">
-        </div>
-        <div class="mdl-cell--10-col">
-           <span class="mdl-chip mdl-chip--contact contact" style="margin-left:0">
-              <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" src="http://clinique-jean-le-bon.capio.fr/wp-content/uploads/sites/26/2014/06/telephone.png"></img>
-              <span class="mdl-chip__text footer-contacts">0800-000-00000</span>
-          </span>
-           <span class="mdl-chip mdl-chip--contact contact" id="get-productor">
-            <img class="mdl-chip__contact" src="http://www.biochampagne.it/themes/cena-avvenimento-importante.png"></img>
-              <span class="mdl-chip__text footer-contacts mdl-cell--hide-tablet mdl-cell--hide-phone">Mapa de productores</span>
-          </span>
-        </div>
-        <div class="mdl-cell--1-col">
-        </div>
+      <footer>
+        <div id="send-phone" style="height: 60px; width: 60px; position: absolute; right: 85; bottom: 20;">
+            <img class="mdl-cell--hide-tablet mdl-cell--hide-phone" src="img/phone-icon.png" style="height: 60px; width: 60px;"></img>
+        </div>    
+        <span id="get-productor" style="height: 60px; width: 60px; position: absolute; right: 160; bottom: 20;">
+            <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;" src="img/map.png"></img>
+        </span>
       </footer>
-
-
       <!-- DIALOGOS -->
-      <dialog class="mdl-dialog" id="validate">
-        <h4 class="mdl-dialog__title">Datos pendientes</h4>
+      <dialog class="mdl-dialog" id="validate" >
+        <h4 class="mdl-dialog__title" >Datos pendientes</h4>
         <div class="mdl-dialog__content">
           <p>
             Por favor complete todos los datos para poder calcular un precio. Gracias!
@@ -395,18 +344,50 @@
         </div>
       </dialog>
 
-      <dialog class="mdl-dialog" id="call-you">
+      <dialog class="mdl-dialog" id="call-you" style="width:350px;">
           <div class="mdl-dialog__content">
-              <p> Danos tu telefono y te llamamos a la brevedad</p>
+              <h4> Mi teléfono (011)15-55555</h4>
+              <p style="padding-top:20px;"> Si queres te llamo</p>
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="tele">
                 <input class="mdl-textfield__input" type="phone" onClick="this.select();" id="telef">
-                <label class="mdl-textfield__label" for="year">Numero de Telefono</label>
+                <label class="mdl-textfield__label" for="year">Número de Teléfono</label>
                 <span class="mdl-textfield__error"></span>
+              </div>
+              <p> Que día puedo llamarte?</p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="lun" checked="checked" />
+                <label for="lun">Lun</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="mar" checked="checked" />
+                <label for="mar">Mar</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="mie" checked="checked" />
+                <label for="mie">Mie</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="jue" checked="checked" />
+                <label for="jue">Jue</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="vie" checked="checked" />
+                <label for="vie">Vie</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="sab"  />
+                <label for="sab">Sab</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="dom"  />
+                <label for="dom">Dom</label>
+              </p>
+              <p style="padding-top: 20px;"> En que horario?</p>
+              <div id="test5" class="noUi-target noUi-ltr noUi-horizontal" style="margin-top:25px">
               </div>
           </div>
           <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-              <button type="button" class="mdl-button close" >Enviar!</button>
-              <button type="button" class="mdl-button close">Cancelar</button>
+              <button type="button" class="mdl-button close" >Ok</button>
           </div>
       </dialog>
 

@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="broker-digital V5">
+
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css">
@@ -26,6 +28,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     
+    <!-- nouslider -->
+    <link href="css/nouislider.min.css" rel="stylesheet">
+    <script src="js/nouislider.min.js"></script>
+
+    <!-- comparativa precios -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/style_price.css">
+
+    <script src="js/dialog.js"></script> 
 
     <script>
       // Funciones generales
@@ -61,6 +73,22 @@
                                       dPoliza.close();
                                       });
                                     });
+
+       //declaracion de formulario poliza  
+        var dCompare = document.querySelector('#dlg-compare');
+        if (!dCompare.showModal) {
+           dialogPolyfill.registerDialog(dCompare);
+        };
+        $(".compare")
+          .click(function(){
+                 dCompare.showModal();
+                 dCompare.querySelector('.close').addEventListener('click', function() {
+                                      dCompare.close();
+                                      });
+                 dCompare.querySelector('.close2').addEventListener('click', function() {
+                                      dCompare.close();
+                                      });
+                });
       });
 
       $(document).ready(function(){
@@ -88,7 +116,7 @@
   <body>
     <!-- Uses a transparent header that draws on top of the layout"s background -->
     <div class="layout-opciones mdl-layout mdl-js-layout">
-      <header class="mdl-layout__header mdl-layout__header--transparent">
+      <header class="mdl-layout__header mdl-layout__header--transparent" style="min-height: 0;">
         <div class="mdl-layout__header-row">
           <!-- Title -->
           <div class="logo chico"></div>          
@@ -114,7 +142,7 @@
           </div>
           <div class="mdl-grid mdl-cell--11-col no-spaces mdl-cell-12-col-tablet mdl-cell-12-col-phone" style="margin-bottom:0; padding-bottom:0;" id="paso3-fila1">
             <!-- tarjeta 1.1 -->
-            <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell-9-col-tablet mdl-cell-12-col-phone no-spaces" style="background-color: rgba(255, 255, 255, 0.75); margin-bottom:0;">
+            <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell-9-col-tablet mdl-cell-12-col-phone no-spaces" style="background-color: rgba(255, 255, 255, 0.75); margin-bottom:0; border-bottom: 2px solid rgb(18, 81, 75)">
               <div class="mdl-grid mdl-cell mdl-cell--12-col no-spaces" >
                 <div class="mdl-grid mdl-cell--12-col" style="margin-right:0px; padding-right:0px;">
                   <div class="mdl-grid mdl-cell mdl-cell--12-col" style="margin:0px; padding:0px;">
@@ -122,8 +150,8 @@
                       <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px; margin-bottom:0;" id="title-paso3"><b>Juanita, pudimos mejorar la oferta!</b>Todo Riego c/ franquicia de $7000 a</h1>
                     </div>
                     <div class="mdl-grid mdl-cell mdl-cell--3-col" style="margin:0px; padding:0px; width:110px; align-self: center;">
-                      <a href="http://victory-design.ru/">
-                        <img class="foto-perfil" src="http://i3.istockimg.com/file_thumbview_approve/62949780/5/stock-photo-62949780-that-smile-has-melted-man-a-heart.jpg"/>
+                      <a>
+                        <img class="foto-perfil" src="http://i3.istockimg.com/file_thumbview_approve/62949780/5/stock-photo-62949780-that-smile-has-melted-man-a-heart.jpg" style="width: 110px; border-radius: 50%; height: 110px; border: 2px solid rgb(22, 172, 164); padding:5px"/>
                       </a>
                     </div>
                   </div>  
@@ -131,21 +159,21 @@
                     <div class="no-spaces">
                       <h1 class="mdl-card__title-text no-spaces" style="font-size: 64px;"><b>$980.-</b></h1>
                     </div>
-                    <div class="no-spaces" style="align-self: center;">
-                      <h1 class="mdl-card__title-text no-spaces" style="align-self:center; padding-left:10px; padding-right:10px;">(x Mes)</h1>
+                    <div class="no-spaces" style="align-self: flex-end; padding-bottom: 10;">
+                      <h1 class="mdl-card__title-text no-spaces" style="align-self:baseline; padding-left:10px; padding-right:10px;">/mes</h1>
                     </div>
+                  </div>
                     <div class="mdl-cell no-spaces" style="align-self: center; padding-left:10px;">
                       <a class="mdl-cell--12-col mdl-button mdl-js-button mdl-button--raised mdl-button--accent next" href='./pago.html'>Contratar</a>
                     </div>
                     <div class="mdl-cell no-spaces" style="align-self: center; padding-left:10px;">
                       <button class="mdl-button mdl-js-button mdl-button--raised" id="btn-poliza">ver poliza</button>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
             <!-- tarjeta 1.2 -->
-            <div class="mdl-card mdl-cell mdl-cell--5-col mdl-cell-9-col-tablet mdl-cell-12-col-phone no-spaces" style="background-color: rgb(36, 166, 154); margin-bottom:0; border-left: 1px solid rgba(0, 0, 0, 0.32);">
+            <div class="mdl-card mdl-cell mdl-cell--5-col mdl-cell-9-col-tablet mdl-cell-12-col-phone no-spaces" style="background-color: rgb(36, 166, 154); margin-bottom:0; border-bottom: 2px solid rgba(0, 0, 0, 0.51);;">
               <div>
                   <div class="carousel carousel-slider" style="height: 353px;">
                     <a class="carousel-item white-text" href="#one!">
@@ -164,46 +192,23 @@
           </div>
           <div class="mdl-grid mdl-cell--11-col no-spaces mdl-cell-12-col-tablet mdl-cell-12-col-phone" style="margin-top:0; padding-top:0;">
             <!-- tarjeta 2.1 -->
-            <div class="mdl-card mdl-cell mdl-cell--6-col no-spaces mdl-cell-9-col-tablet mdl-cell-12-col-phone" style="background-color: rgba(38, 166, 154, 0.78); color:white; padding: 20px; margin-top:0;">
-                  <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px;margin-top: 0;padding-bottom: 10px;border-bottom: 1px solid rgba(255, 255, 255, 0.39); font-size:20px;" id="title-paso3">Otras opciones pueden ser...</h1>
+            <div class="mdl-card mdl-cell mdl-cell--6-col no-spaces mdl-cell-9-col-tablet mdl-cell-12-col-phone" style="background-color: rgba(14, 14, 14, 0.45); color:white; padding: 20px; margin-top:0;">
+                  <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px;margin-top: 0;padding-bottom: 10px;border-bottom: 1px solid rgba(255, 255, 255, 0.39); font-size:20px;" id="title-paso3">Queres ver otras opciones?</h1>
                   <ul class="demo-list-two mdl-list" style="margin: 0;padding: 0;">
-                    <li class="mdl-list__item lista" style="margin: 0;padding: 0; color:white;">
-                      <span class="mdl-cell--9-col">Solo Tercero a $750</span>
-                      <button class="mdl-cell--3-col mdl-button mdl-js-button" style="margin-bottom: 2px; color:white; background-color:rgba(0, 0, 0, 0.21);">
-                         Ver
-                        </button>
-                    </li>
-                    <li class="mdl-list__item lista" style="margin: 0;padding: 0; color:white;">
-                      <span class="mdl-cell--9-col">Tercero Robo e incendio total y parcial a $950</span>
-                      <button class="mdl-cell--3-col mdl-button mdl-js-button" style="margin-bottom: 2px; color:white; background-color:rgba(0, 0, 0, 0.21);">
-                        Ver
-                      </button>
-                    </li>
-                    <li class="mdl-list__item lista" style="margin: 0;padding: 0; color:white;">
-                      <span class="mdl-cell--9-col">Todo Riesgo completo a $2200</span>
-                      <button class="mdl-cell--3-col mdl-button mdl-js-button" style=" margin-bottom: 2px; background-color:rgba(0, 0, 0, 0.21);  color:white;">
-                        Ver
-                      </button>
-                    </li>
+                  <li class="mdl-list__item mdl-list__item--two-line lista" style="margin: 0;padding: 0;">
+                    <button class="mdl-cell--3-col mdl-button mdl-js-button compare" style="margin-bottom: 2px; margin-top:15px; color:white; background-color:rgba(0, 0, 0, 0.21); width: 100%; font-weight: 200;">
+                       estas fueron personalizdas para vos.
+                    </button>
+                  </li>
                   </ul>
             </div>
             <!-- tarjeta 2.2 -->
-            <div class="mdl-card mdl-cell mdl-cell--5-col no-spaces mdl-cell-9-col-tablet mdl-cell-12-col-phone" style="background-color: rgba(38, 166, 154, 0.78); color:white; padding: 20px; margin-top:0;">
+            <div class="mdl-card mdl-cell mdl-cell--5-col no-spaces mdl-cell-9-col-tablet mdl-cell-12-col-phone" style="background-color: rgba(14, 14, 14, 0.45); color:white; padding: 20px; margin-top:0;">
                   <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px;margin-top: 0;padding-bottom: 10px;border-bottom: 1px solid rgba(255, 255, 255, 0.39); font-size:20px;" id="title-paso3">Beneficios y Garantías</h1>
                   <ul class="demo-list-two mdl-list" style="margin: 0;padding: 0;">
                     <li class="mdl-list__item mdl-list__item--two-line lista" style="margin: 0;padding: 0;">
                       <div class="mdl-grid mdl-cell--12-col lists-page3">
-                        <span>0% deducible en robo total</span>
-                      </div>
-                    </li>
-                    <li class="mdl-list__item mdl-list__item--two-line lista" style="margin: 0;padding: 0;">
-                      <div class="mdl-grid mdl-cell--12-col lists-page3">
-                        <span>Servicio de traslado en todo el pais</span>
-                      </div>
-                    </li>
-                    <li class="mdl-list__item mdl-list__item--two-line lista" style="margin: 0;padding: 0;">
-                      <div class="mdl-grid mdl-cell--12-col lists-page3">
-                        <span>Asistencia legal y medica</span>
+                        <span>0% deducible en robo total, Servicio de traslado en todo el pais y Asistencia legal y medica</span>
                       </div>
                     </li>
                   </ul>            
@@ -211,118 +216,300 @@
           </div>
       </div>
       </main>
+      <footer>
+        <span id="send-phone" style="height: 60px; width: 60px; position: absolute; right: 20; bottom: 90;">
+            <img class="mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;"  src="img/phone-icon.png"></img>
+        </span>    
+        <span id="get-productor" style="height: 60px; width: 60px; position: absolute; right: 20; bottom: 160;">
+            <img class="mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;" src="img/map.png"></img>
+        </span>
+      </footer>
 
       <!-- DIALOGOS -->
-      <dialog class="mdl-dialog mdl-cell--9-col mdl-cell-12-col-tablet mdl-cell-12-col-phone" id="dlg-poliza">
-          <div class="mdl-dialog__content ">
-              <h5> Tu cobertura es la siguiente:</h5>
-              <ul class="demo-list-two mdl-list">
-                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
-                  <span class="mdl-list__item-primary-content">
-                    <span>Daños Materiales</span>
-                    <span class="mdl-list__item-text-body">
-                      Valor comercial hasta el 5% deducible.
-                    </span>
-                  </span>
-                  <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
-                  </span>
+      <dialog class="mdl-dialog mdl-cell--9-col mdl-cell-12-col-tablet mdl-cell-12-col-phone" id="dlg-poliza"  style="padding-bottom: 0; padding-top: 0;  background-color:rgba(27, 188, 157, 0.77); width:100%">
+          <div class="pricing-container">
+
+          <ul class="pricing-list bounce-invert">
+            <li class="exclusive" style="width: 100%;">
+              <ul class="pricing-wrapper">
+                <li data-type="monthly" class="is-visible">
+                  <header class="pricing-header" style="padding-bottom:0;">
+                    <h2>Condiciones Generales: Todo Riesgo c.Fcia $7000.-</h2>
+                  </header>
+                  <div class="pricing-body">
+                    <p style="text-align: left; font-weight: 100; margin-bottom: 20px; padding:0 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <div class="mdl-cell--6-col" style="display:inline-block;">
+                      <ul class="pricing-features">
+                        <li>Valor asegurado <em>$164.000</em>.</li>
+                        <li>Responsabilidad civil <em>$1.000.000</em></li>
+                        <li>Robo Total y Parcial <em>Si</em></li>
+                        <li>Adicional x Muerte <em>$2.000.000</em></li>
+                        <li>Extencion resp civil <em>$500.000</em></li>
+                        <li>Incendio Total y Parcial <em>Si</em></li>
+                        <li>Daño Total <em>Si</em></li>
+                        <li>Daño Parcial <em>Fcia. $7000</em></li>
+                      </ul>
+                    </div>    
+                    <div class="mdl-cell--6-col" style="display:inline-block;">
+                      <ul class="pricing-features mdl-cell--6-col">
+                        <li>Clausura dest. del 80% <em>Si</em></li>
+                        <li>Rotura Luneta o Parabrisas <em>Sin Limite</em></li>
+                        <li>Rotura Vidrios Laterales <em>Sin Limite</em></li>
+                        <li>Rotura Cerraduras <em>Sin Limite</em></li>
+                        <li>Daños parciales granizo <em>Sin Limite</em></li>
+                        <li>Asistencia en viaje <em>Si</em></li>
+                        <li>Remolque <em>2 x año</em></li>
+                        <li>Grabado de cristales <em>Si</em></li>
+                      </ul>
+                    </div>
+                    <p style="text-align: left; font-weight: 100; margin-bottom: 00px; padding: 20px 25px 0 25px;"><em style="font-weight: 500;">Lorem ipsum dolor</em> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p style="text-align: left; font-weight: 100; margin-bottom: 00px; padding: 0px 25px 0 25px;"><em style="font-weight: 500;">reprehenderit in voluptate velit</em> esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p style="text-align: left; font-weight: 100; margin-bottom: 20px; padding: 0px 25px 20 25px;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  </div>
+                  <footer class="pricing-footer" >
+                    <a class="select close" style="position: fixed; top: 10px; width: auto; right: 1em; padding: 10; background-color: rgba(0, 0, 0, 0.28);}" href="#">x</a>
+                  </footer>
                 </li>
-                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
-                  <span class="mdl-list__item-primary-content">
-                    <span>Robo</span>
-                    <span class="mdl-list__item-text-body">
-                      Total y parcial cobertura completa.
-                    </span>
-                  </span>
-                  <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
-                  </span>
-                </li>
-                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
-                  <span class="mdl-list__item-primary-content">
-                    <span>Gastos Medicos</span>
-                    <span class="mdl-list__item-text-body">
-                      Para todos los ocupantes del vehiculo hasta $100.000.-
-                    </span>
-                  </span>
-                  <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
-                  </span>
-                </li>
-                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
-                  <span class="mdl-list__item-primary-content">
-                    <span>Accidentes</span>
-                    <span class="mdl-list__item-text-body">
-                      Para el conductor y ocupantes de otros vehiculos que hayan participado del siniestro, hasta $100.000.-
-                    </span>
-                  </span>
-                  <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
-                  </span>
-                </li>
-                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
-                  <span class="mdl-list__item-primary-content">
-                    <span>Responsabilidad Civil</span>
-                    <span class="mdl-list__item-text-body">
-                      Limite único combinado, hasta $1.500.000.-
-                    </span>
-                  </span>
-                  <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
-                  </span>
-                </li>
-                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
-                  <span class="mdl-list__item-primary-content">
-                    <span>Extensión de Responsabilidad Civil</span>
-                    <span class="mdl-list__item-text-body">
-                      Para automobil de transporte de pasajeros
-                    </span>
-                  </span>
-                  <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
-                  </span>
-                </li>
-                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
-                  <span class="mdl-list__item-primary-content">
-                    <span>Resp. Civil por muerte</span>
-                    <span class="mdl-list__item-text-body">
-                      Adicional para responsabilidad civil por muerte, hasta $2.000.000.-
-                    </span>
-                  </span>
-                  <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
-                  </span>
-                </li>
-                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
-                  <span class="mdl-list__item-primary-content">
-                    <span>Asistencia Juridica</span>
-                    <span class="mdl-list__item-text-body">
-                      Equipo de abogados y contadores de la empresa.
-                    </span>
-                  </span>
-                  <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
-                  </span>
-                </li>              
-                <li class="mdl-list__item mdl-list__item--three-line" style="padding:0px; min-height:0; height: auto;">
-                  <span class="mdl-list__item-primary-content">
-                    <span>Otros</span>
-                    <span class="mdl-list__item-text-body">
-                      Asistencia en viaje, Asistencia medica.
-                    </span>
-                  </span>
-                  <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">check</i></a>
-                  </span>
-                </li>              
               </ul>
+            </li>
+
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog class="mdl-dialog mdl-cell--12-col mdl-cell-12-col-tablet mdl-cell-12-col-phone" id="dlg-compare"  style="padding-bottom: 0; padding-top: 0; background-color:rgba(27, 188, 157, 0.77);">
+        <div class="pricing-container">
+          <div class="pricing-switcher">
+            <p class="fieldset" style="height: 48; -webkit-margin-before: 0em; -webkit-margin-after: -2em;}">
+              <input type="radio" name="duration-1" value="monthly" id="monthly-1" checked>
+              <label for="monthly-1" style="line-height: 2.5; font-size: initial; padding-left: 0;">mensual</label>
+              <input type="radio"  name="duration-1" value="yearly" id="yearly-1">
+              <label for="yearly-1" style="line-height: 2.5; font-size: initial; padding-left: 0;">anual</label>
+              <span class="switch"></span>
+            </p>
           </div>
-          <div class="mdl-dialog__actions mdl-dialog__actions">
-              <button type="button" class="mdl-button close">cerrar</button>
+          <ul class="pricing-list bounce-invert">
+            <li>
+              <ul class="pricing-wrapper">
+                <li data-type="monthly" class="is-visible">
+                  <header class="pricing-header">
+                    <h2>Basico</h2>
+                    <div class="price">
+                      <span class="currency">$</span>
+                      <span class="value">780</span>
+                      <span class="duration">mes</span>
+                    </div>
+                  </header>
+                  <div class="pricing-body">
+                    <p style="text-align: center; font-weight: 600; margin-bottom: 20px;">Tercero Robo e incendio</p>
+                    <ul class="pricing-features">
+                      <li>Incendio Total y parcial <em>Si</em>.</li>
+                      <li>Gastos médicos terceros <em>$50.000</em></li>
+                      <li>Gastos médicos cond.+ocupantes <em>$50.000</em></li>
+                      <li>Resp. Civil <em>$1.000.000</em></li>
+                      <li>Adicional x Muerte <em>$1.000.000</em></li>
+                      <li>Extencion resp civil <em>No</em></li>
+                    </ul>
+                  </div>
+                  <footer class="pricing-footer">
+                    <a class="select" href='./pago.html'>Contratar</a>
+                  </footer>
+                </li>
+                <li data-type="yearly" class="is-hidden">
+                  <header class="pricing-header">
+                    <h2>Basico</h2>
+                    <div class="price">
+                      <span class="currency">$</span>
+                      <span class="value">8400</span>
+                      <span class="duration">año</span>
+                    </div>
+                  </header>
+                  <div class="pricing-body">
+                    <p style="text-align: center; font-weight: 600; margin-bottom: 20px;">Tercero Robo e incendio</p>
+                    <ul class="pricing-features">
+                      <li>Incendio Total y parcial <em>Si</em>.</li>
+                      <li>Gastos médicos terceros <em>$50.000</em></li>
+                      <li>Gastos médicos cond.+ocupantes <em>$50.000</em></li>
+                      <li>Resp. Civil <em>$1.000.000</em></li>
+                      <li>Adicional x Muerte <em>$1.000.000</em></li>
+                      <li>Extencion resp civil <em>No</em></li>
+                    </ul>
+                  </div>
+                  <footer class="pricing-footer">
+                    <a class="select" href='./pago.html'>Contratar</a>
+                  </footer>
+                </li>
+              </ul>
+            </li>
+            <li class="exclusive">
+              <ul class="pricing-wrapper">
+                <li data-type="monthly" class="is-visible">
+                  <header class="pricing-header">
+                    <h2>Sugerido</h2>
+                    <div class="price">
+                      <span class="currency">$</span>
+                      <span class="value">980</span>
+                      <span class="duration">mes</span>
+                    </div>
+                  </header>
+                  <div class="pricing-body">
+                    <p style="text-align: center; font-weight: 600; margin-bottom: 20px;">Todo Riesgo c.Fcia de $7000</p>
+                    <ul class="pricing-features">
+                      <li>Incendio Total y parcial <em>Si</em>.</li>
+                      <li>Gastos médicos terceros <em>$100.000</em></li>
+                      <li>Gastos médicos cond.+ocupantes <em>$100.000</em></li>
+                      <li>Resp. Civil <em>$1.500.000</em></li>
+                      <li>Adicional x Muerte <em>$2.000.000</em></li>
+                      <li>Extencion resp civil <em>$500.000</em></li>
+                      <li>Deducible en daños materiales <em>5%</em></li>
+                    </ul>
+                  </div>
+                  <footer class="pricing-footer">
+                    <a class="select" href='./pago.html'>Contratar</a>
+                  </footer>
+                </li>
+                <li data-type="yearly" class="is-hidden">
+                  <header class="pricing-header">
+                    <h2>Sugerido</h2>
+                    <div class="price">
+                      <span class="currency">$</span>
+                      <span class="value">9200</span>
+                      <span class="duration">año</span>
+                    </div>
+                  </header>
+                  <div class="pricing-body">
+                    <p style="text-align: center; font-weight: 600; margin-bottom: 20px;">Todo Riesgo c.Fcia de $7000</p>
+                    <ul class="pricing-features">
+                      <li>Incendio Total y parcial <em>Si</em>.</li>
+                      <li>Gastos médicos terceros <em>$100.000</em></li>
+                      <li>Gastos médicos cond.+ocupantes <em>$100.000</em></li>
+                      <li>Resp. Civil <em>$1.500.000</em></li>
+                      <li>Adicional x Muerte <em>$2.000.000</em></li>
+                      <li>Extencion resp civil <em>$500.000</em></li>
+                      <li>Deducible en daños materiales <em>5%</em></li>
+                    </ul>
+                  </div>
+                  <footer class="pricing-footer">
+                    <a class="select" href='./pago.html'>Contratar</a>
+                  </footer>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul class="pricing-wrapper">
+                <li data-type="monthly" class="is-visible">
+                  <header class="pricing-header">
+                    <h2>Cobertura total</h2>
+                    <div class="price">
+                      <span class="currency">$</span>
+                      <span class="value">1400</span>
+                      <span class="duration">mes</span>
+                    </div>
+                  </header>
+                  <div class="pricing-body">
+                    <p style="text-align: center; font-weight: 600; margin-bottom: 20px;">Todo Riego completo</p>
+                    <ul class="pricing-features">
+                      <li>Incendio Total y parcial <em>Si</em>.</li>
+                      <li>Gastos médicos terceros <em>$1.000.000</em></li>
+                      <li>Gastos médicos cond.+ocupantes <em>$1.000.000</em></li>
+                      <li>Resp. Civil <em>$2.500.000</em></li>
+                      <li>Adicional x Muerte <em>$5.000.000</em></li>
+                      <li>Extencion resp civil <em>$1.500.000</em></li>
+                    </ul>
+                  </div>
+                  <footer class="pricing-footer">
+                    <a class="select close" href='./pago.html'>Contratar</a>
+                    <a class="select close2" style="position: fixed; top: 10px; width: auto; right: 1em; padding: 10; background-color: rgba(0, 0, 0, 0.28);}" href="#">x</a>
+                  </footer>
+                </li>
+                <li data-type="yearly" class="is-hidden">
+                  <header class="pricing-header">
+                    <h2>Cobertura Total</h2>
+                    <div class="price">
+                      <span class="currency">$</span>
+                      <span class="value">15100</span>
+                      <span class="duration">año</span>
+                    </div>
+                  </header>
+                  <div class="pricing-body">
+                    <p style="text-align: center; font-weight: 600; margin-bottom: 20px;">Todo Riego completo</p>
+                    <ul class="pricing-features">
+                      <li>Incendio Total y parcial <em>Si</em>.</li>
+                      <li>Gastos médicos terceros <em>$1.000.000</em></li>
+                      <li>Gastos médicos cond.+ocupantes <em>$1.000.000</em></li>
+                      <li>Resp. Civil <em>$2.500.000</em></li>
+                      <li>Adicional x Muerte <em>$5.000.000</em></li>
+                      <li>Extencion resp civil <em>$1.500.000</em></li>
+                    </ul>
+                  </div>
+                  <footer class="pricing-footer">
+                    <a class="select close" href='./pago.html'>Contratar</a>
+                    <a class="select close2" style="position: fixed; top: 10px; width: auto; right: 1em; padding: 10; background-color: rgba(0, 0, 0, 0.28);}" href="#">x</a>
+                  </footer>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog class="mdl-dialog" id="call-you" style="width:350px;">
+          <div class="mdl-dialog__content">
+              <h4> Mi teléfono (011)15-55555</h4>
+              <p style="padding-top:20px;"> Si queres te llamo</p>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="tele">
+                <input class="mdl-textfield__input" type="phone" onClick="this.select();" id="telef">
+                <label class="mdl-textfield__label" for="year">Número de Teléfono</label>
+                <span class="mdl-textfield__error"></span>
+              </div>
+              <p> Que día puedo llamarte?</p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="lun" checked="checked" />
+                <label for="lun">Lun</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="mar" checked="checked" />
+                <label for="mar">Mar</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="mie" checked="checked" />
+                <label for="mie">Mie</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="jue" checked="checked" />
+                <label for="jue">Jue</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="vie" checked="checked" />
+                <label for="vie">Vie</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="sab"  />
+                <label for="sab">Sab</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="dom"  />
+                <label for="dom">Dom</label>
+              </p>
+              <p style="padding-top: 20px;"> En que horario?</p>
+              <div id="test5" class="noUi-target noUi-ltr noUi-horizontal" style="margin-top:25px">
+              </div>
+          </div>
+          <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+              <button type="button" class="mdl-button close" >Ok</button>
+          </div>
+      </dialog>
+
+      <dialog class="mdl-dialog" id="productor" style="width:80%; height:80%;">
+          <div class="mdl-dialog__content">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1CJg5vqQU00o8ygsyZDCwk3gp3GY" width="640" height="400"></iframe>
+          </div>
+          <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+              <button type="button" class="mdl-button close" >Ok</button>
           </div>
       </dialog>
 
   </body>
+  <script src="js/prices.js"></script>
 </html>
 

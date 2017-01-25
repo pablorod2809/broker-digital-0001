@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="broker-digital V5">
+
+
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css">
@@ -21,6 +24,12 @@
     <!-- Dialogs cross browser -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.js"></script>
+
+    <!-- nouslider -->
+    <link href="css/nouislider.min.css" rel="stylesheet">
+    <script src="js/nouislider.min.js"></script>
+
+    <script src="js/dialog.js"></script> 
 
     <script>
       function MyGET(name) {
@@ -70,9 +79,9 @@
                                 dProductor.close();
                                 });
         });
-
-    });
+     });
     </script>
+
     <!-- Chatra {literal} -->
     <script>
         (function(d, w, c) {
@@ -89,6 +98,7 @@
     </script>
     <!-- /Chatra {/literal} -->
   </head>
+
   <body>
     <!-- Uses a transparent header that draws on top of the layout"s background -->
     <div class="layout-opciones mdl-layout mdl-js-layout">
@@ -108,6 +118,8 @@
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="index.html">Home</a>
             <a class="mdl-navigation__link" href="">Contacto</a>
+            <a class="mdl-navigation__link" href="https://pablo188.typeform.com/to/cuDD8h" data-mode="2" target="_blank">Como lo hacemos?</a>
+            <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
         </nav>
       </div>
 
@@ -117,24 +129,27 @@
           </div>
           <div class="mdl-grid mdl-cell--6-col main">
             <div class="mdl-card something-else mdl-cell mdl-cell--12-col main" style="background-color: rgba(255, 255, 255, 0.75);">
-              <div class="mdl-card__title" style="height:150px; border-bottom: 1px solid rgba(22, 172, 164, 0.61);">
+              <div class="mdl-card__title" style="height:150px; border-bottom: 2px solid rgba(22, 172, 164, 0.61);">
+                <div Style = "border-radius: 50%; border: 2px solid rgb(99, 194, 189);">
                   <img class="foto-perfil" src="http://i3.istockimg.com/file_thumbview_approve/62949780/5/stock-photo-62949780-that-smile-has-melted-man-a-heart.jpg" />
-                  <p class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 24px; margin-bottom:0;margin-top:0; font-weight: 400; align-self: center; display:inline;"><b>Te recomiendo,</b> Todo Riego c/ franquicia de $7000</p>
+                </div>  
+                  <p class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px; font-weight: 400; margin-bottom: 0; margin-top: 0; color: #777777; align-self: center; display:inline; margin-left: 20px;">Te recomiendo,</br>
+                  <em style="font-size: 20px; font-weight: 400; margin-bottom: 0; margin-top: 0; color: #777777; align-self: center; display:inline; font-style: initial;">Todo Riego c/ franquicia de $7.000</em></p>
               </div>
               <div class="mdl-grid mdl-cell--12-col" style="padding-top: 25px;">
                 <!--Tarjeta principal-->
-                <div class="mdl-grid mdl-cell--12-col">
+                <div style="display: flex; margin-left: auto; margin-right: auto;  margin-bottom: 20px;">
                   <h1 class="mdl-card__title-text mdl-cell" style="font-size: 64px; margin-left:10px; width: auto;">
-                    <b style="padding-left:10px; padding-right:10px;">$1120.-</b>
+                    <em style="font-size: 28px; align-self: baseline; margin-top: 15px; font-style: normal; font-weight: 500; color: #16aca4;">$</em><b style="padding-left:10px; padding-right:0px; font-weight: 400;">1.120</b>
                   </h1>
-                  <h2 style="align-self: flex-end;">
-                    <p style="font-size:20px;">(x mes.)</p>
+                  <h2 style="align-self: flex-end; margin-bottom: 0px;  color: #16aca4;">
+                    <p style="font-size:20px; ">/mes</p>
                   </h2>
                 </div>
                 <div class="mdl-grid mdl-cell--12-col">
-                  <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-weight: 300; font-size: 24px; margin-left:10px; margin-top:-10px">Si queres podemos refinar aún más esta cotización, solo te tomará 2 minutos...</h1>
+                  <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-weight: 500; font-size: 20px; margin-left:10px; margin-top:-10px; color:#777777">Si queres podemos refinar aún más esta cotización, solo te tomará 2 minutos...</h1>
                 </div>
-                <div>
+                <div Style="margin-left: auto; margin-right: 20px;">
                   <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent btn-continuar next">Continuar</button>
                 </div>
                 <!-- Detalle de datos por defecto -->
@@ -183,55 +198,18 @@
             </div>
           </div>
           <div class="mdl-grid mdl-cell--4-col mdl-cell-6-col-tablet mdl-cell-6-col-phone card-no-main">
-            <!--Tarjeta acceso conocer otras opciones -->
-            <div class="mdl-card something-else mdl-cell mdl-cell--12-col card-no-main" style="background-color: #37414f; margin-bottom:0;">
-              <div class="mdl-grid mdl-cell--12-col" style="background:url(http://inta.gob.ar/sites/default/files/inta-opciones-mercados-futuros.junio-2016.jpg) center; padding-top: 110px;">
-                <p style="color:white;padding-top: 15%;padding-bottom: 0%;font-size:24px;text-align: right;margin: auto 0 0 auto;">Queres conocer otras opciones. </p>
-              </div>
-              <div class="mdl-card__actions mdl-card--border" style="margin-botom:0;">
-                  <div class="mdl-grid mdl-cell--12-col">
-                    <button class="mdl-button mdl-js-button mdl-button--icon" style="color:white; background-color: #009688; font-size: 15px;">
-                      <i class="fa fa-facebook"></i>
-                    </button>
-                    <button class="mdl-button mdl-js-button mdl-button--icon next" style="color:white; margin-left: 10px; background-color: #009688; font-size: 15px;">
-                      <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    </button>    
-                    <span class="mdl-chip mdl-chip--contact" style=" margin-left: 10px;">
-                      <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">
-                        <i class="material-icons" style=" margin-top: 6px; font-size: 18px;">phone</i>
-                      </span>
-                      <span class="mdl-chip__text" style="color:black;">011 15-555555</span>
-                    </span>
-                </div>
-              </div>
-            </div>
-            <!--Tarjeta redes sociales -->
-            <div class="mdl-card something-else mdl-cell mdl-cell--12-col card-no-main" style="background-color: rgb(69, 92, 173); margin-top:0;">
-              <div class="like"></div>
-              <h1 style="color:white;font-size:24px;padding-left: 10px;padding-right: 10px;font-weight: 300 !important;text-align: center;">Seguinos en redes sociales y enterate de todos nuestros beneficios!</h1>
-            </div>
           </div>
           <div class="mdl-grid mdl-cell--1-col mdl-cell--hide-phone mdl-cell--hide-tablet">
           </div>
         </div>
-      
       </main>
-
-      <footer id="footer" class="mdl-grid mdl-cell--12-col">
-        <div class="mdl-cell--2-col">
-        </div>
-        <div class="mdl-cell--9-col">
-           <span class="mdl-chip mdl-chip--contact contact" >
-              <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" src="http://clinique-jean-le-bon.capio.fr/wp-content/uploads/sites/26/2014/06/telephone.png"></img>
-              <span class="mdl-chip__text footer-contacts">0800-000-00000</span>
-          </span>
-          <span class="mdl-chip mdl-chip--contact contact" id="get-productor">
-            <img class="mdl-chip__contact" src="http://www.biochampagne.it/themes/cena-avvenimento-importante.png"></img>
-              <span class="mdl-chip__text mdl-footer-contacts mdl-cell--hide-tablet mdl-cell--hide-phone">Mapa de Productores</span>
-          </span>
-        </div>
-        <div class="mdl-cell--2-col">
-        </div>
+      <footer>
+        <span id="send-phone" style="height: 60px; width: 60px; position: absolute; right: 85; bottom: 20;">
+            <img class="mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;"  src="img/phone-icon.png"></img>
+        </span>    
+        <span id="get-productor" style="height: 60px; width: 60px; position: absolute; right: 160; bottom: 20;">
+            <img class="mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;" src="img/map.png"></img>
+        </span>
       </footer>
 
       <!-- DIALOGOS -->
@@ -263,6 +241,53 @@
           </div>
       </dialog>
 
+      <dialog class="mdl-dialog" id="call-you" style="width:350px;">
+          <div class="mdl-dialog__content">
+              <h4> Mi teléfono (011)15-55555</h4>
+              <p style="padding-top:20px;"> Si queres te llamo</p>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="tele">
+                <input class="mdl-textfield__input" type="phone" onClick="this.select();" id="telef">
+                <label class="mdl-textfield__label" for="year">Número de Teléfono</label>
+                <span class="mdl-textfield__error"></span>
+              </div>
+              <p> Que día puedo llamarte?</p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="lun" checked="checked" />
+                <label for="lun">Lun</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="mar" checked="checked" />
+                <label for="mar">Mar</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="mie" checked="checked" />
+                <label for="mie">Mie</label>
+              </p>
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="jue" checked="checked" />
+                <label for="jue">Jue</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="vie" checked="checked" />
+                <label for="vie">Vie</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="sab"  />
+                <label for="sab">Sab</label>
+              </p>              
+              <p style="display:inline;">
+                <input type="checkbox" class="filled-in" id="dom"  />
+                <label for="dom">Dom</label>
+              </p>
+              <p style="padding-top: 20px;"> En que horario?</p>
+              <div id="test5" class="noUi-target noUi-ltr noUi-horizontal" style="margin-top:25px">
+              </div>
+          </div>
+          <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+              <button type="button" class="mdl-button close" >Ok</button>
+          </div>
+      </dialog>
+
       <dialog class="mdl-dialog" id="productor" style="width:80%; height:80%;">
           <div class="mdl-dialog__content">
               <iframe src="https://www.google.com/maps/d/embed?mid=1CJg5vqQU00o8ygsyZDCwk3gp3GY" width="640" height="80%"></iframe>
@@ -274,4 +299,3 @@
 
   </body>
 </html>
-
