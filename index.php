@@ -352,7 +352,7 @@
 
       <dialog class="mdl-dialog" id="productor" style="width:80%; height:80%;">
           <div class="mdl-dialog__content">
-              <iframe src="https://www.google.com/maps/d/embed?mid=1CJg5vqQU00o8ygsyZDCwk3gp3GY" width="640" height="80%"></iframe>
+              <iframe src="https://www.google.com/maps/d/embed?mid=1CJg5vqQU00o8ygsyZDCwk3gp3GY" width="640" height="480"></iframe>
           </div>
           <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
               <button type="button" class="mdl-button close" >Ok</button>

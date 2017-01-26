@@ -71,11 +71,15 @@
       if (! dValidate.showModal) {
          dialogPolyfill.registerDialog(dValidate);
       };
+      
+      var dPromo = document.querySelector('#dlg-promo');
+      if (! dPromo.showModal) {
+         dialogPolyfill.registerDialog(dPromo);
+      };
 
-      <!--
       var snackbarContainer = document.querySelector('#toast');
       var snackbarContainerConf = document.querySelector('#confirm-toast');
-      -->
+      
       $("#option-1")
         .click(function(){
           document.querySelector("#detaill-add1").innerHTML = '<p id="ad1" style="color: #9e9e9e; font-size: 18; display:none"></p>';
@@ -90,7 +94,7 @@
                      $("#toast").removeClass("mdl-snackbar--active");
                      dValidate.showModal();
                      dValidate.querySelector('.next').addEventListener('click', function() {
-                                  document.querySelector("#detaill-add1").innerHTML = '<p style="color: #9e9e9e; font-size: 18; display:inline"> cobertura de recaudación </p>';
+                                  document.querySelector("#detaill-add1").innerHTML = '<span class="mdl-chip mdl-chip--deletable"><span class="mdl-chip__text">Cobertura recaudación</span><button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button></span>';
                                   dValidate.close();
                                   });
 
@@ -106,6 +110,21 @@
           snackbarContainer.MaterialSnackbar.showSnackbar(data);
       });
 
+      $("#option-4")
+        .click(function(){
+          $("#valor-gnc").addClass("hidden");
+      });      
+
+      $("#option-5")
+        .click(function(){
+          $("#valor-gnc").addClass("hidden");
+      });
+        
+      $("#option-6")
+        .click(function(){
+          $("#valor-gnc").removeClass("hidden");
+      });
+
       $("#option-7")
         .click(function(){
           'use strict';
@@ -119,7 +138,7 @@
               message: 'Instalar uno puede reducirte la cuota hasta un 10%',
               actionHandler: function(event) {
                      $("#toast").removeClass("mdl-snackbar--active");
-                     document.querySelector("#detaill-add3").innerHTML = '<p id="ad1" style="color: #9e9e9e; font-size: 18; display:inline"> servicio rastreo satelital </p>';
+                     document.querySelector("#detaill-add3").innerHTML = '<span class="mdl-chip mdl-chip--deletable"><span class="mdl-chip__text">Servicio reastreo satelital</span><button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button></span>';
                      snackbarContainerConf.MaterialSnackbar.showSnackbar({ message: 'Entendido'});
               },
               actionText: 'Me interesa',
@@ -130,7 +149,17 @@
 
       $("#option-10")
         .click(function(){
-          document.querySelector("#detaill-add2").innerHTML = '<p id="ad1" style="color: #9e9e9e; font-size: 18; display:inline">1ra cuota bonificada x Debito Automatico</p>';
+          document.querySelector("#detaill-add2").innerHTML = '<span class="mdl-chip mdl-chip--deletable"><span class="mdl-chip__text">Primera cuota bonificada</span><button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button></span>';
+      });
+
+      $("#option-81")
+        .click(function(){
+          $("#div-kms").removeClass('hidden');
+      });
+
+      $("#option-71")
+        .click(function(){
+          $("#div-kms").addClass('hidden');
       });
 
       $("#option-11")
@@ -144,8 +173,19 @@
       });
 
 
-     $("#btn-paso3")
-        .click(function(){ window.location="paso3.html?nombre="+vName;});
+      $("#btn-paso3").click(function(){ window.location="paso3.html?nombre="+vName;});
+     
+      $("#codigo-promo")
+          .click(function(){ 
+                dPromo.showModal();
+                dPromo.querySelector('.next').addEventListener('click', function() {
+                                  document.querySelector("#detaill-add4").innerHTML = '<span class="mdl-chip mdl-chip--deletable"><span class="mdl-chip__text">Precio especial</span><button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button></span>';
+                                  dPromo.close();
+                                  });
+                dPromo.querySelector('.close').addEventListener('click', function() {
+                                  dPromo.close();
+                                  });
+          });
 
       $('select').material_select();
     
@@ -249,24 +289,33 @@
                   </div>
 
                   <div class="col s12 div-selected">
-                    <label class="label-selected" for="comb" style="font-size:large; display:block;">Que tipo de combustible usas?</label>
-                    <div class="opt-horizontal">
-                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
-                        <input type="radio" id="option-4" class="mdl-radio__button" name="opt_comb" value="4">
-                        <span class="mdl-radio__label">Nafta</span>
-                      </label>
+                    <div class="col s6 " style="padding-left: 0;">
+                      <label class="label-selected" for="comb" style="font-size:large; display:block;">Que tipo de combustible usas?</label>
+                      <div class="opt-horizontal">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+                          <input type="radio" id="option-4" class="mdl-radio__button" name="opt_comb" value="4">
+                          <span class="mdl-radio__label">Nafta</span>
+                        </label>
+                      </div>
+                      <div class="opt-horizontal">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
+                          <input type="radio" id="option-5" class="mdl-radio__button" name="opt_comb" value="5">
+                          <span class="mdl-radio__label">Diesel</span>
+                        </label>
+                      </div>
+                      <div class="opt-horizontal">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
+                          <input type="radio" id="option-6" class="mdl-radio__button" name="opt_comb" value="6">
+                          <span class="mdl-radio__label">Gas</span>
+                        </label>
+                      </div>
                     </div>
-                    <div class="opt-horizontal">
-                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
-                        <input type="radio" id="option-5" class="mdl-radio__button" name="opt_comb" value="5">
-                        <span class="mdl-radio__label">Diesel</span>
-                      </label>
-                    </div>
-                    <div class="opt-horizontal">
-                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
-                        <input type="radio" id="option-6" class="mdl-radio__button" name="opt_comb" value="6">
-                        <span class="mdl-radio__label">Gas</span>
-                      </label>
+                    <div class="col s6 ">
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label hidden" style="padding-bottom: 0;" id="valor-gnc">
+                        <input class="mdl-textfield__input" type="number" id="telef">
+                        <label class="mdl-textfield__label" for="year">Valor del equipo de GNC</label>
+                        <span class="mdl-textfield__error"></span>
+                      </div>
                     </div>
                   </div>
 
@@ -287,8 +336,25 @@
                   </div>
 
                   <div class="col s12 div-selected">
-                    <label class="label-selected" for="comb" style="font-size:large; display:block;">que cantidad de kms tiene tu auto?</label>
-                    <input id="first_name" type="number" style="width:auto;" class="validate" value="50000">
+                    <div class="col s6 " style="padding-left: 0;">
+                      <label class="label-selected" for="comb" style="font-size:large; display:block;">Tenes un 0 Km?</label>  
+                        <div class="opt-horizontal">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-71">
+                          <input type="radio" id="option-71" class="mdl-radio__button" name="opt_okm" value="71">
+                          <span class="mdl-radio__label">Si</span>
+                        </label>
+                      </div>
+                      <div class="opt-horizontal">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-81">
+                          <input type="radio" id="option-81" class="mdl-radio__button" name="opt_okm" value="81">
+                          <span class="mdl-radio__label">No</span>
+                        </label>
+                      </div>
+                    </div>  
+                    <div id="div-kms" class="col s6 hidden kms" style="padding-left: 0;" >
+                      <label class="label-selected" for="comb" style="font-size:large; display:block;">¿que cantidad de kms tiene?</label>
+                      <input id="kms" type="number" style="width:auto;" class="validate" value="50000">
+                    </div>
                   </div>
 
 
@@ -309,13 +375,12 @@
                   </div>
 
                   <div class="col s12 div-selected">
-                    <label class="label-selected" for="comb" style="font-size:large; display:block;">Adicionales y descuentos</label>
-                    <div id="detaill-add1"class="opt-horizontal">
-                    </div>  
-                    <div id="detaill-add2"class="opt-horizontal">
-                    </div>  
-                    <div id="detaill-add3"class="opt-horizontal">
-                    </div>  
+                    <label class="label-selected" for="comb" style="font-size:large; display:block;">Adicionales y descuentos <span style="color: #16aca4;
+    font-size: 14; cursor:pointer;" id="codigo-promo">¿tenes un código promocional?</span></label>
+                    <div id="detaill-add1"class="opt-horizontal"></div>  
+                    <div id="detaill-add2"class="opt-horizontal"></div>  
+                    <div id="detaill-add3"class="opt-horizontal"></div>  
+                    <div id="detaill-add4"class="opt-horizontal"></div>  
                   </div>
 
                   <div class="row">
@@ -368,6 +433,20 @@
               <span class="mdl-textfield__error"></span>
             </div>
 
+        </div>
+        <div class="mdl-dialog__actions mdl-dialog__actions">
+            <button type="button" class="mdl-button close">cancelar</button>
+            <button type="button" class="mdl-button next">continuar</button>
+        </div>
+    </dialog>
+
+    <dialog class="mdl-dialog" id="dlg-promo">
+        <div class="mdl-dialog__content">
+            <p> Cargá el codigo promocional que recibiste</p>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="name1">
+              <input class="mdl-textfield__input" type="text" onClick="this.select();" id="name" value="">
+              <span class="mdl-textfield__error"></span>
+            </div>
         </div>
         <div class="mdl-dialog__actions mdl-dialog__actions">
             <button type="button" class="mdl-button close">cancelar</button>

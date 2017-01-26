@@ -51,7 +51,7 @@
       $( function() { 
         //obtengo valores del get.
         var vName = MyGET("nombre");
-        document.querySelector("#title-paso3").innerHTML = vName +',</br> pudimos mejorar la oferta! Todo Riego c/ franquicia de $7000 a...';
+        document.querySelector("#title-paso3").innerHTML = '<em style="font-weight: bold;">' + vName +',</em> pudimos mejorar la oferta! Todo Riego c/ franquicia de $7000 a...';
         $('select').material_select();
 
         //Funciones de carrousel
@@ -89,6 +89,23 @@
                                       dCompare.close();
                                       });
                 });
+
+
+        //declaro dialogo para subir fotos.  
+        var dPhotos = document.querySelector('#photos');
+        if (! dPhotos.showModal) {
+           dialogPolyfill.registerDialog(dPhotos);
+        };
+
+        $("#btn-contratar")
+        .click(function(){
+            dPhotos.showModal();
+            dPhotos.querySelector('.close').addEventListener('click', function() {
+                               window.location="./pago.html";
+                               dPhotos.close();
+                              });
+      });
+
       });
 
       $(document).ready(function(){
@@ -147,7 +164,7 @@
                 <div class="mdl-grid mdl-cell--12-col" style="margin-right:0px; padding-right:0px;">
                   <div class="mdl-grid mdl-cell mdl-cell--12-col" style="margin:0px; padding:0px;">
                     <div class="mdl-grid mdl-cell mdl-cell--9-col " style="margin-right:0; padding-right:0;" id="titulo-opc">
-                      <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="font-size: 28px; margin-bottom:0;" id="title-paso3"><b>Juanita, pudimos mejorar la oferta!</b>Todo Riego c/ franquicia de $7000 a</h1>
+                      <h1 class="mdl-card__title-text mdl-cell mdl-cell--12-col" style="margin-bottom:0; display:inline" id="title-paso3"><em style="font-weight: bold;">Juanita,</em> pudimos mejorar la oferta!Todo Riego c/ franquicia de $7000 a</h1>
                     </div>
                     <div class="mdl-grid mdl-cell mdl-cell--3-col" style="margin:0px; padding:0px; width:110px; align-self: center;">
                       <a>
@@ -164,7 +181,7 @@
                     </div>
                   </div>
                     <div class="mdl-cell no-spaces" style="align-self: center; padding-left:10px;">
-                      <a class="mdl-cell--12-col mdl-button mdl-js-button mdl-button--raised mdl-button--accent next" href='./pago.html'>Contratar</a>
+                      <a id="btn-contratar" class="mdl-cell--12-col mdl-button mdl-js-button mdl-button--raised mdl-button--accent next" >Contratar</a>
                     </div>
                     <div class="mdl-cell no-spaces" style="align-self: center; padding-left:10px;">
                       <button class="mdl-button mdl-js-button mdl-button--raised" id="btn-poliza">ver poliza</button>
@@ -504,6 +521,37 @@
           </div>
           <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
               <button type="button" class="mdl-button close" >Ok</button>
+          </div>
+      </dialog>
+
+      <dialog class="mdl-dialog" id="photos" style="width:480px;">
+          <div class="mdl-dialog__content">
+              <h3 style="font-size: 2.5rem; font-weight: bold;">Necesito unas fotos de tu auto</h3>
+              <p style="padding-bottom:20px; padding-top:5px"> Para acelerar el proceso de emisión de tu póliza necesito que tomes unas fotos de tu auto </br><em style="font-weight: bold; font-size:13; color:rgba(20, 155, 148, 0.69);"> (si no tenes tiempo ahora, podes hacerlo mas tarde accediendo a un link que te enviaremos por e-mail)</em></p>
+              <span>
+                  <img style="height: 95px; width: 95px; cursor:pointer;" src="img/auto_frente.jpg"></img>
+              </span>
+              <span style="height: 80px; width: 80px;">
+                  <img style="height: 95px; width: 95px; cursor:pointer;" src="img/auto_derecha.jpg"></img>
+              </span>
+              <span style="height: 80px; width: 80px;">
+                  <img style="height: 95px; width: 95px; cursor:pointer;" src="img/auto_atras.jpg"></img>
+              </span>
+              <span style="height: 80px; width: 80px;">
+                  <img style="height: 95px; width: 95px; cursor:pointer;" src="img/auto_izquierda.jpg"></img>
+              </span>
+              <span style="height: 80px; width: 80px;">
+                  <img style="height: 95px; width: 95px; cursor:pointer;" src="img/auto_motor.jpg"></img>
+              </span>
+              <span style="height: 80px; width: 80px;">
+                  <img style="height: 95px; width: 95px; cursor:pointer;" src="img/auto_interior.jpg"></img>
+              </span>
+              <span style="height: 80px; width: 80px;">
+                  <img style="height: 95px; width: 95px; cursor:pointer;" src="img/auto_tablero.jpg"></img>
+              </span>
+          </div>
+          <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+              <button type="button" class="mdl-button close" >Continuar</button>
           </div>
       </dialog>
 
