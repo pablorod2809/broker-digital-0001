@@ -1,5 +1,10 @@
 # Broker Digital
 
+V6. Ajustes funcionales .
+  - agregado de imagenes de auto
+  - aviso a inspector.
+  - cantidad de kms cuando un auto no es 0km.
+
 V5. Ajustes funcionales y estetica.
   - llamado telefonico con fecha y hora
   - cambio opciones de menu
