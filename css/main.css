@@ -54,7 +54,7 @@
 
 .label-selected{
       color:#606060;
-      margin-bottom: 5px;
+      margin-bottom: 15px;
 }
 
 .label-unselected{
@@ -137,6 +137,47 @@
   width: 100px;
   margin: auto auto auto;
 }
+
+
+.bd-dialog-title{
+    font-size: 32;
+    text-align: center;
+}
+
+.bd-telefono-nro{
+    font-size: 24;
+    text-align: center;
+    color: #149b94;
+    font-weight: 600;
+    margin-bottom: 35;
+}
+
+.bd-dialog-sub-title{
+    font-size: 24;
+    text-align: center;
+}
+
+.bd-btn-primary{
+    border: 2px solid #149b94;
+    width: 150;
+    color: white;
+    background-color: #149b94 !important;
+    display: block;
+    margin-bottom: 10;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bd-btn-secondary{
+    border: 2px solid #149b94;
+    width: 150;
+    color: #149b94;
+    display: block;
+    margin-bottom: 10;
+        margin-left: auto;
+    margin-right: auto;
+}
+
 
 .mdl-card {
   min-height: 150px;
@@ -280,7 +321,7 @@ height: 200px;
 }
 
 .mdl-chip {
-      background-color: rgba(222, 222, 222, 0.2) !important;
+      background-color: rgba(22, 172, 164, 0.35) !important;
 }
 
 .foto-perfil{
