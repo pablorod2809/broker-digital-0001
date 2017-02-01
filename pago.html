@@ -51,7 +51,6 @@
             dialog1.showModal();
             dialog1.querySelector('.close').addEventListener('click', function() {
                                 dialog1.close();
-                                window.location="index.php";
                                 });
         });
 
@@ -168,13 +167,13 @@
           </div>
           <div class="mdl-grid mdl-cell--4-col mdl-cell--hide-phone mdl-cell--hide-tablet">
           </div>
-        </div>
-        <div  id="send-phone" style="height: 60px; width: 60px; position: fixed; right: 90; bottom: 20;">
-            <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" src="img/phone-icon.png" style="height: 60px; width: 60px;"></img>
-        </div>    
-        <span id="get-productor" style="height: 60px; width: 60px; position: fixed; right: 160; bottom: 20;">
-            <img class="mdl-chip__contact mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;" src="img/map.png"></img>
-        </span>    
+          <span id="send-phone" style="height: 60px; width: 60px; position: fixed; right: 90; bottom: 20;">
+              <img class="mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;"  src="img/phone-icon.png"></img>
+          </span>    
+          <span id="get-productor" style="height: 60px; width: 60px; position: fixed; right: 160; bottom: 20;">
+              <img class="mdl-cell--hide-tablet mdl-cell--hide-phone" style="height: 60px; width: 60px;" src="img/map.png"></img>
+          </span>
+        </div>          
       </main>
 
 
@@ -221,7 +220,7 @@
 
           </div>
           <div class="mdl-dialog__actions mdl-dialog__actions">
-              <button type="button" class="mdl-button close">ok</button>
+              <button id="btn-finish" type="button" class="mdl-button close">ok</button>
           </div>
       </dialog>
 
@@ -274,62 +273,6 @@
 
           </ul>
         </div>
-      </dialog>
-
-      <dialog class="mdl-dialog" id="call-you" style="width:350px;">
-          <div class="mdl-dialog__content">
-              <h4> Mi teléfono (011)15-55555</h4>
-              <p style="padding-top:20px;"> Si queres te llamo</p>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="tele">
-                <input class="mdl-textfield__input" type="phone" onClick="this.select();" id="telef">
-                <label class="mdl-textfield__label" for="year">Número de Teléfono</label>
-                <span class="mdl-textfield__error"></span>
-              </div>
-              <p> Que día puedo llamarte?</p>
-              <p style="display:inline;">
-                <input type="checkbox" class="filled-in" id="lun" checked="checked" />
-                <label for="lun">Lun</label>
-              </p>
-              <p style="display:inline;">
-                <input type="checkbox" class="filled-in" id="mar" checked="checked" />
-                <label for="mar">Mar</label>
-              </p>
-              <p style="display:inline;">
-                <input type="checkbox" class="filled-in" id="mie" checked="checked" />
-                <label for="mie">Mie</label>
-              </p>
-              <p style="display:inline;">
-                <input type="checkbox" class="filled-in" id="jue" checked="checked" />
-                <label for="jue">Jue</label>
-              </p>              
-              <p style="display:inline;">
-                <input type="checkbox" class="filled-in" id="vie" checked="checked" />
-                <label for="vie">Vie</label>
-              </p>              
-              <p style="display:inline;">
-                <input type="checkbox" class="filled-in" id="sab"  />
-                <label for="sab">Sab</label>
-              </p>              
-              <p style="display:inline;">
-                <input type="checkbox" class="filled-in" id="dom"  />
-                <label for="dom">Dom</label>
-              </p>
-              <p style="padding-top: 20px;"> En que horario?</p>
-              <div id="test5" class="noUi-target noUi-ltr noUi-horizontal" style="margin-top:25px">
-              </div>
-          </div>
-          <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-              <button type="button" class="mdl-button close" >Ok</button>
-          </div>
-      </dialog>
-
-      <dialog class="mdl-dialog" id="productor" style="width:80%; height:80%;">
-          <div class="mdl-dialog__content">
-              <iframe src="https://www.google.com/maps/d/embed?mid=1CJg5vqQU00o8ygsyZDCwk3gp3GY" width="640" height="80%"></iframe>
-          </div>
-          <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-              <button type="button" class="mdl-button close" >Ok</button>
-          </div>
       </dialog>
 
   </body>
