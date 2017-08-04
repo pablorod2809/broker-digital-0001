@@ -40,7 +40,7 @@
       $( function() {
 
         var availableTags = [
-          "Chevrolet Agile 1.4 LS / LS Spirit 5Ptas. " ,
+          "Chevrolet Agile 1.4 LS / LS Spirit 6Ptas. " ,
           "Chevrolet Agile 1.4 LT / LT Spirit 5Ptas. " ,
           "Chevrolet Agile 1.4 LTZ / LTZ Spirit 5Ptas." ,
           "Chevrolet Agile 1.4 LTZ Google WiFi 5Ptas. " ,
@@ -278,7 +278,7 @@
           <div class="mdl-cell mdl-cell--5-col mdl-cell--hide-tablet mdl-cell--hide-phone">
             <div style="height:30%">
             </div>  
-            <h2 class="titulo">Hacelo YA!</h1>
+            <h2 class="titulo">Hacelo YA !</h1>
             <h5 class="titulo">Te ofrecemos una amplia gama de coberturas, con el respaldo y servicio que siempre nos caracterízan.</h2>
           </div>
         </div>
