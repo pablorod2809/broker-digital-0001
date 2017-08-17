@@ -40,7 +40,7 @@
       $( function() {
 
         var availableTags = [
-          "Chevrolet Agile 1.4 LS / LS Spirit 6Ptas. " ,
+          "Chevrolet Agile 1.4 LS / LS Spirit 5Ptas. " ,
           "Chevrolet Agile 1.4 LT / LT Spirit 5Ptas. " ,
           "Chevrolet Agile 1.4 LTZ / LTZ Spirit 5Ptas." ,
           "Chevrolet Agile 1.4 LTZ Google WiFi 5Ptas. " ,
@@ -227,7 +227,7 @@
 
           <div class="card-online mdl-card something-else mdl-cell mdl-cell--6-col mdl-cell-10-col-tablet mdl-cell-12-col-phone main" style="background-color: rgba(255, 255, 255, 0.75)">
             <div class="mdl-card__title titulo-tarjeta" style="border-bottom:2px solid rgba(22, 172, 164, 1); color:black;" >
-              <div class="mdl-grid mdl-cell mdl-cell--3-col" style="margin-left: -5px;  margin-bottom: 15px;">
+              <div style="margin-left: -5px;  margin-bottom: 15px;">
                 <a>
                   <img src="http://i3.istockimg.com/file_thumbview_approve/62949780/5/stock-photo-62949780-that-smile-has-melted-man-a-heart.jpg" style="width: 110px; border-radius: 50%; height: 110px; border: 2px solid rgb(22, 172, 164); padding:5px"/>
                 </a>
@@ -242,11 +242,12 @@
                 <button class="mdl-button mdl-js-button mdl-button--icon" style="margin-left: 10px; background-color: #009688; font-size: 15px; color:white;">
                   <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 </button>               
+                <label style="vertical-align: middle;padding: 0.7em;font-weight: 200;color: #16aca4;">(11)<em style="color:gray; font-style:normal; font-weight:200;">15</em>5200454</label>              
               </div>
             </div>
 
             <div class="mdl-grid mdl-cell--12-col" style="padding-top: 49px;">
-            <div style="width: auto;text-align: right;margin-top: -43px;font-size: 14px;border: 0px solid #e2e2e2; border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;border-top-right-radius: 15px; vertical-align: middle;padding: 0.7em;font-weight: bold;color: #16aca4;">
+            <div style="width: auto;text-align: right;margin-top: -43px;font-size: 14px;border: 0px solid #e2e2e2; border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;border-top-right-radius: 15px; vertical-align: middle;padding: 0em;font-weight: bold;color: #16aca4;">
                 <label>Obten&#233; ahora mismo una cotizacion on-line!</label>
             </div>
 
@@ -278,7 +279,7 @@
           <div class="mdl-cell mdl-cell--5-col mdl-cell--hide-tablet mdl-cell--hide-phone">
             <div style="height:30%">
             </div>  
-            <h2 class="titulo">Hacelo YA !</h1>
+            <h2 class="titulo">Hacelo YA!</h1>
             <h5 class="titulo">Te ofrecemos una amplia gama de coberturas, con el respaldo y servicio que siempre nos caracterízan.</h2>
           </div>
         </div>
