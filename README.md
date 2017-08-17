@@ -1,5 +1,7 @@
 # Broker Digital
 
+V7. Ajustes visualizacion iphone 4
+
 V6. Ajustes funcionales .
   - agregado de imagenes de auto
   - aviso a inspector.
