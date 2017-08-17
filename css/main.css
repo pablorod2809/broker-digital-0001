@@ -422,6 +422,14 @@ summary {
   .reduce-refresh-btn{
     left: 20px;
   }
+
+  .mdl-cell--11-col, .mdl-cell--11-col-phone.mdl-cell--11-col-phone {
+    width: 100%;
+  }
+
+  .reduce-photos{
+    width: 280px !important;
+  }
 }
 
 @media screen and (max-width: 479px){
@@ -518,4 +526,5 @@ summary {
   .paso3-fila1{
     width:100%;
   }
+
 }
